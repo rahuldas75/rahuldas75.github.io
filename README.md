@@ -38,4 +38,4 @@ This project is licensed under the MIT License. You are free to use and modify t
 
 ## Contact
 
-Feel free to reach out to me through the contact section on my website or via email at [rahuldss333@gmail.com](mailto: rahuldss333@gmail.com) for any inquiries or collaboration opportunities.
+Feel free to reach out to me through the contact section on my website or via email at [rahuldss333@gmail.com](mailto:rahuldss333@gmail.com) for any inquiries or collaboration opportunities.
