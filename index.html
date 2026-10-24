@@ -369,64 +369,6 @@
             </button>
           </div>
         </div>
-
-        <!-- Right Hero Card: Live Local Clock -->
-        <aside class="liquid-glass liquid-glass-interactive clock-panel" id="clockPanel" data-phase="day" aria-label="Live local time">
-          <div class="panel-header" style="margin-bottom: 0;">
-            <span>Local Time 🕰️</span>
-            <span class="live-ist-pill" id="clockZone">--</span>
-          </div>
-
-          <div class="clock-wrap">
-            <svg id="analogClock" viewBox="0 0 200 200" role="img" aria-label="Analog clock showing the current local time">
-              <defs>
-                <radialGradient id="clockGlow" cx="50%" cy="50%" r="50%">
-                  <stop offset="88%" stop-color="var(--clock-glow)" stop-opacity="0.6" />
-                  <stop offset="100%" stop-color="var(--clock-glow)" stop-opacity="0" />
-                </radialGradient>
-                <radialGradient id="clockFace" cx="50%" cy="38%" r="70%">
-                  <stop offset="0%" stop-color="#1E4E38" />
-                  <stop offset="100%" stop-color="#0A1C15" />
-                </radialGradient>
-              </defs>
-
-              <circle class="anim-halo" cx="100" cy="100" r="98" fill="url(#clockGlow)" />
-              <circle cx="100" cy="100" r="90" fill="url(#clockFace)" stroke="var(--clock-rim)" stroke-width="3" />
-              <circle cx="100" cy="100" r="84" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
-
-              <g id="clockTicks"></g>
-
-              <g font-family="Quicksand, sans-serif" font-weight="700" font-size="15" fill="#F5EBD5" text-anchor="middle">
-                <text x="100" y="45">12</text>
-                <text x="157" y="105">3</text>
-                <text x="100" y="166">6</text>
-                <text x="43" y="105">9</text>
-              </g>
-
-              <text id="clockPhase" x="100" y="72" text-anchor="middle" font-size="15">☀️</text>
-
-              <g id="hourHand"><line x1="100" y1="106" x2="100" y2="60" stroke="#F2B568" stroke-width="6" stroke-linecap="round" /></g>
-              <g id="minuteHand"><line x1="100" y1="108" x2="100" y2="38" stroke="#F5EBD5" stroke-width="4" stroke-linecap="round" /></g>
-              <g id="secondHand">
-                <line x1="100" y1="120" x2="100" y2="26" stroke="#4ADE80" stroke-width="1.8" stroke-linecap="round" />
-                <circle cx="100" cy="122" r="3.5" fill="#4ADE80" />
-              </g>
-              <circle cx="100" cy="100" r="5.5" fill="#F2B568" stroke="#0B1F19" stroke-width="2" />
-              <circle cx="100" cy="100" r="2" fill="#0B1F19" />
-            </svg>
-
-            <div class="digital-time">
-              <span id="clockDigital">--:--:--</span>
-            </div>
-            <div class="clock-date" id="clockDate">&nbsp;</div>
-          </div>
-
-          <div class="clock-meta">
-            <span class="tech-pill" id="clockGreeting">Hello 🍃</span>
-            <span class="tech-pill" id="clockOffset">UTC</span>
-            <span class="tech-pill" id="clockTzName">Local timezone</span>
-          </div>
-        </aside>
       </section>
 
       <!-- 3. PRIMARY 4-CARD BENTO SHOWCASE (All Original Cards Preserved) -->

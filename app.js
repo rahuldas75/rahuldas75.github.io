@@ -253,78 +253,6 @@
     }
 
     /* ==========================================================================
-       LIVE CLOCK (follows the visitor's own timezone)
-       ========================================================================== */
-    function buildClockTicks() {
-      const g = $('#clockTicks');
-      let out = '';
-      for (let i = 0; i < 60; i++) {
-        const major = i % 5 === 0;
-        out += '<line x1="100" y1="13" x2="100" y2="' + (major ? 25 : 19) + '" transform="rotate(' + (i * 6) + ' 100 100)" ' +
-               'stroke="' + (major ? '#F2B568' : 'rgba(245,235,213,.55)') + '" stroke-width="' + (major ? 2.6 : 1.2) + '" stroke-linecap="round"/>';
-      }
-      g.innerHTML = out;
-    }
-
-    function startClock() {
-      if (!document.getElementById('analogClock')) return;
-      buildClockTicks();
-
-      let tz = 'UTC';
-      try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC'; } catch (e) {}
-      const city = tz.split('/').pop().replace(/_/g, ' ');
-      let offset = '';
-      try {
-        const part = new Intl.DateTimeFormat('en', { timeZoneName: 'shortOffset' }).formatToParts(new Date())
-          .find(p => p.type === 'timeZoneName');
-        offset = part ? part.value : '';
-      } catch (e) {}
-      $('#clockZone').textContent = city;
-      $('#clockTzName').textContent = tz.replace(/_/g, ' ');
-      $('#clockOffset').textContent = offset || 'UTC';
-
-      const timeFmt = new Intl.DateTimeFormat(undefined, { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-      const dateFmt = new Intl.DateTimeFormat(undefined, { weekday: 'long', day: 'numeric', month: 'long' });
-      const hour = document.getElementById('hourHand');
-      const minute = document.getElementById('minuteHand');
-      const second = document.getElementById('secondHand');
-      const panel = document.getElementById('clockPanel');
-      let lastSec = -1;
-
-      function render() {
-        const now = new Date();
-        const s = now.getSeconds();
-        const smooth = prefersReducedMotion ? s : s + now.getMilliseconds() / 1000;
-        const m = now.getMinutes() + smooth / 60;
-        const h = (now.getHours() % 12) + m / 60;
-
-        hour.style.transform = 'rotate(' + (h * 30) + 'deg)';
-        minute.style.transform = 'rotate(' + (m * 6) + 'deg)';
-        second.style.transform = 'rotate(' + (smooth * 6) + 'deg)';
-
-        if (s !== lastSec) {
-          lastSec = s;
-          $('#clockDigital').textContent = timeFmt.format(now);
-          $('#clockDate').textContent = dateFmt.format(now);
-
-          const hr = now.getHours();
-          const night = hr < 6 || hr >= 19;
-          panel.dataset.phase = night ? 'night' : 'day';
-          $('#clockPhase').textContent = night ? '🌙' : (hr >= 17 ? '🌇' : '☀️');
-          $('#clockGreeting').textContent =
-            (hr < 5 ? 'Late night 🌌' : hr < 12 ? 'Good morning ☀️' : hr < 17 ? 'Good afternoon 🌤️' : hr < 21 ? 'Good evening 🌇' : 'Good night 🌙');
-        }
-      }
-
-      render();
-      if (prefersReducedMotion) {
-        setInterval(render, 1000);
-      } else {
-        (function loop() { requestAnimationFrame(loop); if (!document.hidden) render(); })();
-      }
-    }
-
-    /* ==========================================================================
        PARTICLES: pollen (sunny) • rain (monsoon) • fireflies (starlight)
        ========================================================================== */
     const canvas = $('#particleCanvas');
@@ -433,8 +361,6 @@
       let saved = 0;
       try { saved = parseInt(localStorage.getItem('rd-weather'), 10) || 0; } catch (e) {}
       applyWeather(saved, true);
-
-      startClock();
 
       startParticles();
       const sweep = $('#pageLightSweep');

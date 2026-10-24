@@ -578,7 +578,7 @@
        ========================================================================== */
     .hero-veranda-grid {
       display: grid;
-      grid-template-columns: 1.38fr 1fr;
+      grid-template-columns: 1fr;
       gap: 28px;
       align-items: stretch;
       margin-top: 4px;
@@ -1381,65 +1381,6 @@
       .weather-pill-btn #navWeatherLabel { display: none; }
       .dock-link { font-size: .64rem; }
     }
-  
-
-/* ==========================================================================
-   LIVE CLOCK CARD
-   ========================================================================== */
-.clock-panel {
-  --clock-glow: rgba(242, 181, 104, 0.9);
-  --clock-rim: rgba(242, 181, 104, 0.75);
-  padding: 22px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 12px;
-  background:
-    radial-gradient(circle at 85% 15%, rgba(253, 224, 71, 0.16), transparent 55%),
-    radial-gradient(circle at 15% 85%, rgba(74, 222, 128, 0.14), transparent 55%),
-    var(--glass-surface);
-}
-.clock-panel[data-phase="night"] {
-  --clock-glow: rgba(125, 211, 252, 0.8);
-  --clock-rim: rgba(147, 197, 253, 0.65);
-  background:
-    radial-gradient(circle at 85% 15%, rgba(125, 211, 252, 0.14), transparent 55%),
-    radial-gradient(circle at 15% 85%, rgba(74, 222, 128, 0.1), transparent 55%),
-    var(--glass-surface);
-}
-.clock-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
-#analogClock {
-  overflow: visible;
-  width: min(100%, 250px);
-  height: auto;
-  filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.45));
-}
-#analogClock #hourHand,
-#analogClock #minuteHand,
-#analogClock #secondHand { transform-box: view-box; transform-origin: 100px 100px; }
-.digital-time {
-  font-family: var(--font-mono);
-  font-size: 1.55rem;
-  font-weight: 700;
-  color: var(--text-accent);
-  letter-spacing: 1px;
-  text-shadow: 0 2px 14px rgba(254, 240, 138, 0.35);
-  font-variant-numeric: tabular-nums;
-}
-.clock-date { font-size: 0.82rem; color: var(--parchment); font-weight: 600; }
-.clock-meta { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
-
-@media (max-width: 520px) {
-  .clock-panel { padding: 16px; }
-  #analogClock { width: min(78vw, 240px); }
-  .digital-time { font-size: 1.4rem; }
-}
-
 
 /* ==========================================================================
    THEMES — Sunny = light mode • Monsoon = mid-tone • Starlight = dark mode
@@ -1545,5 +1486,3 @@ body[data-weather="night"] { /* 🌙 STARLIGHT — deep navy dark mode */
   --text-strong: #FFFFFF;
   --text-accent: #FEF08A;
 }
-/* Light cards: tone down the glossy dark clock shadow slightly */
-body[data-weather="sunny"] #analogClock { filter: drop-shadow(0 10px 18px rgba(70, 55, 20, 0.35)); }
