@@ -88,7 +88,8 @@
     html { scroll-behavior: smooth; }
 
     body {
-      background-color: var(--deep-woodland);
+      background-color: var(--bg-base);
+      transition: background-color 0.6s ease, color 0.6s ease;
       color: var(--warm-cream);
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       min-height: 100vh;
@@ -214,13 +215,7 @@
       inset: 0;
       z-index: 3;
       pointer-events: none;
-      background: linear-gradient(
-        180deg,
-        rgba(8, 22, 17, 0.52) 0%,
-        var(--scene-tint) 38%,
-        rgba(8, 24, 18, 0.76) 78%,
-        rgba(7, 20, 15, 0.95) 100%
-      );
+      background: linear-gradient(180deg, var(--vig-1) 0%, var(--vig-2) 38%, var(--vig-3) 78%, var(--vig-4) 100%);
       transition: background 0.8s ease;
     }
 
@@ -469,7 +464,7 @@
       height: 40px;
       border-radius: 12px;
       background: linear-gradient(135deg, rgba(74, 222, 128, 0.18), rgba(242, 181, 104, 0.14));
-      border: 1px solid rgba(255, 255, 255, 0.24);
+      border: 1px solid var(--tint-border);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -514,7 +509,7 @@
     }
 
     .nav-pill:hover, .nav-pill.active {
-      color: #FFFFFF;
+      color: var(--text-strong);
       background: rgba(74, 222, 128, 0.18);
     }
 
@@ -544,7 +539,7 @@
       height: 42px;
       padding: 0 15px;
       border-radius: 99px;
-      background: rgba(255, 255, 255, 0.08);
+      background: var(--tint);
       border: 1px solid var(--glass-rim);
       color: var(--warm-cream);
       cursor: pointer;
@@ -604,7 +599,7 @@
       font-family: var(--font-mono);
       font-size: 0.72rem;
       color: var(--emerald-accent);
-      background: rgba(12, 34, 26, 0.78);
+      background: var(--pill-bg);
       border: 1px solid rgba(74, 222, 128, 0.35);
       padding: 5px 13px;
       border-radius: 99px;
@@ -631,8 +626,8 @@
       font-family: 'Quicksand', sans-serif;
       font-size: clamp(2.15rem, 5vw, 3.25rem);
       font-weight: 700;
-      color: #FFFFFF;
-      text-shadow: 0 4px 24px rgba(0, 0, 0, 0.65);
+      color: var(--text-strong);
+      text-shadow: 0 4px 24px var(--ts-color);
       line-height: 1.12;
       display: flex;
       align-items: center;
@@ -645,16 +640,16 @@
       font-weight: 600;
       color: var(--parchment);
       margin-top: 8px;
-      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+      text-shadow: 0 2px 12px var(--ts-color);
       letter-spacing: 0.3px;
     }
 
     .hero-bio-text {
       font-size: clamp(0.94rem, 2vw, 1.04rem);
-      color: #E2EFE8;
+      color: var(--text-hero-body);
       margin-top: 14px;
       line-height: 1.65;
-      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85);
+      text-shadow: 0 2px 14px var(--ts-color);
     }
 
     .hero-social-bar {
@@ -669,9 +664,9 @@
       width: 46px;
       height: 46px;
       border-radius: 50%;
-      background: rgba(12, 34, 26, 0.82);
+      background: var(--pill-bg);
       border: 1px solid var(--glass-rim);
-      color: #FFFFFF;
+      color: var(--text-strong);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -684,7 +679,7 @@
 
     .social-orb:hover {
       background: var(--emerald-accent);
-      color: #082016;
+      color: var(--on-accent);
       border-color: #FFFFFF;
       transform: translateY(-4px) scale(1.06);
     }
@@ -698,11 +693,11 @@
     .good-vibes-script {
       font-family: 'Caveat', cursive;
       font-size: 1.85rem;
-      color: #FEF08A;
+      color: var(--text-accent);
       margin-top: 18px;
       display: inline-block;
       transform: rotate(-3deg);
-      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.85);
+      text-shadow: 0 3px 12px var(--ts-color);
     }
 
     .spirit-whisper {
@@ -713,7 +708,7 @@
       padding: 7px 12px;
       border: 1px dashed rgba(245, 235, 213, .45);
       border-radius: 999px;
-      background: rgba(11, 31, 25, .45);
+      background: var(--pill-bg);
       color: var(--warm-cream);
       font: 600 .84rem 'Caveat', cursive;
       cursor: pointer;
@@ -739,8 +734,8 @@
     .live-ist-pill {
       font-family: var(--font-mono);
       font-size: 0.7rem;
-      color: #FEF08A;
-      background: rgba(0, 0, 0, 0.35);
+      color: var(--text-accent);
+      background: var(--tile-bg);
       border: 1px solid rgba(254, 240, 138, 0.3);
       padding: 4px 10px;
       border-radius: 99px;
@@ -770,8 +765,8 @@
     .mood-chip {
       padding: 8px 6px;
       border-radius: 12px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: var(--tint);
+      border: 1px solid var(--tint-border);
       color: var(--parchment);
       font-family: inherit;
       font-size: 0.75rem;
@@ -784,18 +779,18 @@
       transition: all 0.22s var(--spring);
     }
 
-    .mood-chip:hover { background: rgba(255, 255, 255, 0.12); transform: translateY(-2px); }
+    .mood-chip:hover { background: var(--tint-hover); transform: translateY(-2px); }
     .mood-chip.active {
       background: rgba(74, 222, 128, 0.22);
       border-color: var(--emerald-accent);
-      color: #FFFFFF;
+      color: var(--text-strong);
       box-shadow: 0 0 14px rgba(74, 222, 128, 0.22);
     }
 
     .panel-header {
       font-size: 1.02rem;
       font-weight: 700;
-      color: #FFFFFF;
+      color: var(--text-strong);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -865,7 +860,7 @@
       border-radius: 99px;
       background: rgba(74, 222, 128, 0.16);
       border: 1px solid rgba(74, 222, 128, 0.45);
-      color: #FFFFFF;
+      color: var(--text-strong);
       font-family: inherit;
       font-size: 0.8rem;
       font-weight: 700;
@@ -876,7 +871,7 @@
 
     .pill-cta-btn:hover {
       background: var(--emerald-accent);
-      color: #082016;
+      color: var(--on-accent);
       transform: translateY(-2px);
     }
 
@@ -920,15 +915,15 @@
       gap: 11px;
       padding: 9px 11px;
       border-radius: 13px;
-      background: rgba(255, 255, 255, 0.045);
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: var(--tint);
+      border: 1px solid var(--tint-border);
       text-decoration: none;
-      color: #FFFFFF;
+      color: var(--text-strong);
       transition: all 0.2s ease;
     }
 
     .proj-mini-item:hover {
-      background: rgba(255, 255, 255, 0.1);
+      background: var(--tint-hover);
       border-color: var(--glass-rim);
       transform: translateX(3px);
     }
@@ -960,8 +955,7 @@
 
     .toolkit-card {
       background:
-        linear-gradient(180deg, rgba(10, 32, 24, 0.35) 0%, rgba(8, 24, 18, 0.88) 100%),
-        radial-gradient(circle at 50% 25%, rgba(242, 181, 104, 0.26), transparent 70%),
+                radial-gradient(circle at 50% 25%, rgba(242, 181, 104, 0.26), transparent 70%),
         var(--glass-surface);
     }
 
@@ -978,7 +972,7 @@
       font-weight: 600;
       padding: 4px 10px;
       border-radius: 99px;
-      background: rgba(255, 255, 255, 0.07);
+      background: var(--tint);
       border: 1px solid rgba(169, 190, 146, 0.28);
       color: var(--warm-cream);
       transition: all 0.2s ease;
@@ -987,15 +981,15 @@
     .tech-pill:hover {
       background: rgba(242, 181, 104, 0.22);
       border-color: var(--firelight-amber);
-      color: #FEF08A;
+      color: var(--text-accent);
     }
 
     .handwritten-quote {
       font-family: 'Caveat', cursive;
       font-size: 1.45rem;
       line-height: 1.2;
-      color: #FEF08A;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+      color: var(--text-accent);
+      text-shadow: 0 2px 10px var(--ts-color);
     }
 
     .about-grid {
@@ -1011,8 +1005,8 @@
       gap: 12px;
       padding: 10px 12px;
       border-radius: var(--radius-sm);
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: var(--tint);
+      border: 1px solid var(--tint-border);
       margin-top: 8px;
     }
 
@@ -1049,7 +1043,7 @@
       font-family: 'Quicksand', sans-serif;
       font-size: clamp(1.7rem, 3.5vw, 2.35rem);
       font-weight: 700;
-      color: #FFFFFF;
+      color: var(--text-strong);
       line-height: 1.15;
     }
 
@@ -1071,7 +1065,7 @@
       padding: 8px 15px;
       min-height: 38px;
       border-radius: 99px;
-      background: rgba(255, 255, 255, 0.06);
+      background: var(--tint);
       border: 1px solid rgba(169, 190, 146, 0.25);
       color: var(--parchment);
       font-family: inherit;
@@ -1082,10 +1076,10 @@
       white-space: nowrap;
     }
 
-    .filter-btn:hover { color: #FFFFFF; background: rgba(255, 255, 255, 0.12); }
+    .filter-btn:hover { color: var(--text-strong); background: var(--tint-hover); }
     .filter-btn.active {
       background: var(--emerald-accent);
-      color: #072015;
+      color: var(--on-accent);
       border-color: #FFFFFF;
       box-shadow: 0 6px 16px rgba(74, 222, 128, 0.3);
     }
@@ -1108,7 +1102,7 @@
     .metric-tile {
       padding: 12px;
       border-radius: var(--radius-md);
-      background: rgba(0, 0, 0, 0.26);
+      background: var(--tile-bg);
       border: 1px solid rgba(169, 190, 146, 0.18);
     }
 
@@ -1116,7 +1110,7 @@
       font-family: 'Quicksand', sans-serif;
       font-size: 1.2rem;
       font-weight: 700;
-      color: #FEF08A;
+      color: var(--text-accent);
     }
 
     .metric-lbl {
@@ -1137,7 +1131,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      color: #FFFFFF;
+      color: var(--text-strong);
       margin: 0 auto;
       cursor: pointer;
       transition: background 0.6s ease, transform 0.35s var(--spring);
@@ -1175,7 +1169,7 @@
     .card-graphic-banner {
       height: 102px;
       border-radius: var(--radius-md);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      border: 1px solid var(--tint-border);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -1195,7 +1189,7 @@
       gap: 14px;
       padding: 12px 14px;
       border-radius: var(--radius-md);
-      background: rgba(255, 255, 255, 0.04);
+      background: var(--tint);
       border: 1px solid rgba(169, 190, 146, 0.16);
       margin-top: 10px;
     }
@@ -1204,7 +1198,7 @@
       font-family: var(--font-mono);
       font-size: 0.72rem;
       font-weight: 700;
-      color: #FEF08A;
+      color: var(--text-accent);
       background: rgba(242, 181, 104, 0.16);
       border: 1px solid rgba(242, 181, 104, 0.35);
       padding: 4px 10px;
@@ -1234,9 +1228,9 @@
       bottom: 84px;
       left: 50%;
       transform: translateX(-50%) translateY(20px);
-      background: rgba(12, 34, 26, 0.95);
+      background: var(--pill-bg);
       border: 1px solid var(--emerald-accent);
-      color: #FFFFFF;
+      color: var(--text-strong);
       padding: 10px 18px;
       border-radius: 99px;
       font-size: 0.82rem;
@@ -1265,7 +1259,7 @@
       border-radius: 99px;
       justify-content: space-between;
       align-items: center;
-      background: rgba(10, 29, 22, 0.90);
+      background: var(--pill-bg);
     }
 
     .dock-link {
@@ -1288,7 +1282,7 @@
 
     .dock-link span { font-size: 1.08rem; line-height: 1; }
     .dock-link.active {
-      color: #FFFFFF;
+      color: var(--text-strong);
       background: rgba(74, 222, 128, 0.22);
     }
 
@@ -1305,7 +1299,7 @@
       .desktop-world-svg { display: none; }
       .mobile-world-svg { display: block; }
       .world-vignette {
-        background: linear-gradient(180deg, rgba(8,22,17,.52) 0%, var(--scene-tint) 45%, rgba(8,24,18,.80) 100%);
+        background: linear-gradient(180deg, var(--vig-1) 0%, var(--vig-2) 45%, var(--vig-4) 100%);
       }
       .nav-pill-group { display: none; }
       .hero-veranda-grid { grid-template-columns: 1fr; gap: 20px; }
@@ -1388,3 +1382,168 @@
       .dock-link { font-size: .64rem; }
     }
   
+
+/* ==========================================================================
+   LIVE CLOCK CARD
+   ========================================================================== */
+.clock-panel {
+  --clock-glow: rgba(242, 181, 104, 0.9);
+  --clock-rim: rgba(242, 181, 104, 0.75);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(253, 224, 71, 0.16), transparent 55%),
+    radial-gradient(circle at 15% 85%, rgba(74, 222, 128, 0.14), transparent 55%),
+    var(--glass-surface);
+}
+.clock-panel[data-phase="night"] {
+  --clock-glow: rgba(125, 211, 252, 0.8);
+  --clock-rim: rgba(147, 197, 253, 0.65);
+  background:
+    radial-gradient(circle at 85% 15%, rgba(125, 211, 252, 0.14), transparent 55%),
+    radial-gradient(circle at 15% 85%, rgba(74, 222, 128, 0.1), transparent 55%),
+    var(--glass-surface);
+}
+.clock-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+#analogClock {
+  overflow: visible;
+  width: min(100%, 250px);
+  height: auto;
+  filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.45));
+}
+#analogClock #hourHand,
+#analogClock #minuteHand,
+#analogClock #secondHand { transform-box: view-box; transform-origin: 100px 100px; }
+.digital-time {
+  font-family: var(--font-mono);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--text-accent);
+  letter-spacing: 1px;
+  text-shadow: 0 2px 14px rgba(254, 240, 138, 0.35);
+  font-variant-numeric: tabular-nums;
+}
+.clock-date { font-size: 0.82rem; color: var(--parchment); font-weight: 600; }
+.clock-meta { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+
+@media (max-width: 520px) {
+  .clock-panel { padding: 16px; }
+  #analogClock { width: min(78vw, 240px); }
+  .digital-time { font-size: 1.4rem; }
+}
+
+
+/* ==========================================================================
+   THEMES — Sunny = light mode • Monsoon = mid-tone • Starlight = dark mode
+   ========================================================================== */
+:root {                      /* ☀️ SUNNY — warm, light UI */
+  --bg-base: #EFE6CF;
+  --text-strong: #12302A;
+  --text-accent: #8A5200;
+  --text-hero-body: #2B4A3B;
+  --warm-cream: #1F3D32;
+  --parchment: #3C5A49;
+  --sage: #55744F;
+  --emerald-accent: #1F8A4C;
+  --firelight-amber: #B7640F;
+  --on-accent: #FFFFFF;
+
+  --glass-surface: rgba(255, 251, 240, 0.74);
+  --glass-surface-hover: rgba(255, 253, 246, 0.92);
+  --glass-rim: rgba(96, 124, 75, 0.36);
+  --glass-specular-top: rgba(255, 255, 255, 0.95);
+  --glass-specular-bottom: rgba(120, 100, 60, 0.16);
+  --glass-shadow: 0 18px 38px -14px rgba(70, 55, 20, 0.30);
+
+  --pill-bg: rgba(255, 251, 240, 0.90);
+  --tint: rgba(23, 63, 50, 0.06);
+  --tint-hover: rgba(23, 63, 50, 0.12);
+  --tint-border: rgba(23, 63, 50, 0.16);
+  --tile-bg: rgba(23, 63, 50, 0.07);
+  --ts-color: rgba(255, 250, 235, 0.85);
+
+  --vig-1: rgba(252, 246, 226, 0.62);
+  --vig-2: rgba(250, 243, 222, 0.52);
+  --vig-3: rgba(244, 235, 208, 0.84);
+  --vig-4: rgba(239, 230, 207, 0.96);
+}
+
+body[data-weather="rain"] {  /* 🌧️ MONSOON — slate-teal middle ground */
+  --bg-base: #3C5563;
+  --text-strong: #F1F6F7;
+  --text-accent: #FCE9A8;
+  --text-hero-body: #E3EEF0;
+  --warm-cream: #DCE7EA;
+  --parchment: #C3D3D7;
+  --sage: #9FBABE;
+  --emerald-accent: #5FD3C0;
+  --firelight-amber: #F5C27A;
+  --on-accent: #08231F;
+
+  --glass-surface: rgba(74, 102, 115, 0.68);
+  --glass-surface-hover: rgba(88, 118, 131, 0.84);
+  --glass-rim: rgba(160, 198, 206, 0.34);
+  --glass-specular-top: rgba(255, 255, 255, 0.28);
+  --glass-specular-bottom: rgba(0, 0, 0, 0.24);
+  --glass-shadow: 0 18px 38px -14px rgba(8, 22, 30, 0.50);
+
+  --pill-bg: rgba(60, 86, 98, 0.90);
+  --tint: rgba(255, 255, 255, 0.07);
+  --tint-hover: rgba(255, 255, 255, 0.13);
+  --tint-border: rgba(255, 255, 255, 0.15);
+  --tile-bg: rgba(14, 30, 38, 0.34);
+  --ts-color: rgba(0, 0, 0, 0.55);
+
+  --vig-1: rgba(98, 122, 135, 0.42);
+  --vig-2: rgba(106, 130, 143, 0.30);
+  --vig-3: rgba(84, 108, 121, 0.62);
+  --vig-4: rgba(68, 90, 103, 0.90);
+}
+
+body[data-weather="night"] { /* 🌙 STARLIGHT — deep navy dark mode */
+  --bg-base: #050C14;
+  --text-strong: #F4F7FF;
+  --text-accent: #FEF08A;
+  --text-hero-body: #DCE5F5;
+  --warm-cream: #E4EAF6;
+  --parchment: #B9C6DD;
+  --sage: #8EA3C4;
+  --emerald-accent: #4ADE80;
+  --firelight-amber: #F2B568;
+  --on-accent: #072015;
+
+  --glass-surface: rgba(8, 16, 30, 0.80);
+  --glass-surface-hover: rgba(14, 26, 46, 0.92);
+  --glass-rim: rgba(120, 150, 200, 0.26);
+  --glass-specular-top: rgba(255, 255, 255, 0.20);
+  --glass-specular-bottom: rgba(0, 0, 0, 0.50);
+  --glass-shadow: 0 20px 45px -12px rgba(0, 4, 12, 0.80);
+
+  --pill-bg: rgba(7, 14, 26, 0.90);
+  --tint: rgba(255, 255, 255, 0.05);
+  --tint-hover: rgba(255, 255, 255, 0.10);
+  --tint-border: rgba(255, 255, 255, 0.10);
+  --tile-bg: rgba(0, 0, 0, 0.36);
+  --ts-color: rgba(0, 0, 0, 0.80);
+
+  --vig-1: rgba(3, 8, 16, 0.62);
+  --vig-2: rgba(5, 12, 20, 0.58);
+  --vig-3: rgba(4, 10, 18, 0.84);
+  --vig-4: rgba(3, 8, 14, 0.96);
+}
+
+/* Phone mockups are "screens" on a sky gradient: keep their text light in every theme */
+.phone-chassis, .large-phone-mockup {
+  --text-strong: #FFFFFF;
+  --text-accent: #FEF08A;
+}
+/* Light cards: tone down the glossy dark clock shadow slightly */
+body[data-weather="sunny"] #analogClock { filter: drop-shadow(0 10px 18px rgba(70, 55, 20, 0.35)); }

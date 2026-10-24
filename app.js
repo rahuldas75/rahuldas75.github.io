@@ -137,7 +137,7 @@
             '<span class="tech-pill">' + item.tagline + '</span>' +
           '</div>' +
           '<div>' +
-            '<h3 style="font-size:1.1rem;font-weight:800;color:#fff;">' + item.title + '</h3>' +
+            '<h3 style="font-size:1.1rem;font-weight:800;color:var(--text-strong);">' + item.title + '</h3>' +
             '<p style="font-size:.84rem;color:var(--parchment);margin-top:6px;line-height:1.6;">' + item.desc + '</p>' +
           '</div>' +
           '<div class="tech-pill-cloud">' + pills(item.tags) + '</div>' +
@@ -163,7 +163,7 @@
 
       $('#principlesContainer').innerHTML = C.principles.map(p =>
         '<div class="timeline-item"><span style="font-size:20px;">' + p.icon + '</span>' +
-        '<div><div style="font-weight:700;color:#fff;font-size:.9rem;">' + p.title + '</div>' +
+        '<div><div style="font-weight:700;color:var(--text-strong);font-size:.9rem;">' + p.title + '</div>' +
         '<div style="font-size:.82rem;color:var(--parchment);">' + p.text + '</div></div></div>').join('');
 
       $('#toolkitGroups').innerHTML = C.toolkit.map(g =>
@@ -215,8 +215,6 @@
       $('#navWeatherLabel').textContent = m.label;
       $$('.mood-chip').forEach(c => c.classList.toggle('active', Number(c.dataset.weatherIdx) === weatherIdx));
 
-      $('#observatoryMoodTitle').textContent = m.title;
-      $('#observatoryMoodSub').textContent = m.sub;
 
       $('#phoneIcon').textContent = m.icon;
       $('#phoneTemp').textContent = m.temp;
@@ -226,7 +224,7 @@
       $('#appPagePhoneDesc').textContent = m.desc;
 
       document.querySelector('meta[name="theme-color"]').setAttribute('content',
-        m.key === 'night' ? '#050C14' : m.key === 'rain' ? '#0F172A' : '#0B1F19');
+        m.key === 'night' ? '#050C14' : m.key === 'rain' ? '#3C5563' : '#EFE6CF');
 
       try { localStorage.setItem('rd-weather', String(weatherIdx)); } catch (e) {}
       buildParticles();
@@ -255,13 +253,75 @@
     }
 
     /* ==========================================================================
-       IST CLOCK
+       LIVE CLOCK (follows the visitor's own timezone)
        ========================================================================== */
-    function updateClock() {
-      const t = new Intl.DateTimeFormat('en-GB', {
-        timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', hour12: false
-      }).format(new Date());
-      $('#guwahatiClock').textContent = 'IST • ' + t;
+    function buildClockTicks() {
+      const g = $('#clockTicks');
+      let out = '';
+      for (let i = 0; i < 60; i++) {
+        const major = i % 5 === 0;
+        out += '<line x1="100" y1="13" x2="100" y2="' + (major ? 25 : 19) + '" transform="rotate(' + (i * 6) + ' 100 100)" ' +
+               'stroke="' + (major ? '#F2B568' : 'rgba(245,235,213,.55)') + '" stroke-width="' + (major ? 2.6 : 1.2) + '" stroke-linecap="round"/>';
+      }
+      g.innerHTML = out;
+    }
+
+    function startClock() {
+      if (!document.getElementById('analogClock')) return;
+      buildClockTicks();
+
+      let tz = 'UTC';
+      try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC'; } catch (e) {}
+      const city = tz.split('/').pop().replace(/_/g, ' ');
+      let offset = '';
+      try {
+        const part = new Intl.DateTimeFormat('en', { timeZoneName: 'shortOffset' }).formatToParts(new Date())
+          .find(p => p.type === 'timeZoneName');
+        offset = part ? part.value : '';
+      } catch (e) {}
+      $('#clockZone').textContent = city;
+      $('#clockTzName').textContent = tz.replace(/_/g, ' ');
+      $('#clockOffset').textContent = offset || 'UTC';
+
+      const timeFmt = new Intl.DateTimeFormat(undefined, { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      const dateFmt = new Intl.DateTimeFormat(undefined, { weekday: 'long', day: 'numeric', month: 'long' });
+      const hour = document.getElementById('hourHand');
+      const minute = document.getElementById('minuteHand');
+      const second = document.getElementById('secondHand');
+      const panel = document.getElementById('clockPanel');
+      let lastSec = -1;
+
+      function render() {
+        const now = new Date();
+        const s = now.getSeconds();
+        const smooth = prefersReducedMotion ? s : s + now.getMilliseconds() / 1000;
+        const m = now.getMinutes() + smooth / 60;
+        const h = (now.getHours() % 12) + m / 60;
+
+        hour.style.transform = 'rotate(' + (h * 30) + 'deg)';
+        minute.style.transform = 'rotate(' + (m * 6) + 'deg)';
+        second.style.transform = 'rotate(' + (smooth * 6) + 'deg)';
+
+        if (s !== lastSec) {
+          lastSec = s;
+          $('#clockDigital').textContent = timeFmt.format(now);
+          $('#clockDate').textContent = dateFmt.format(now);
+
+          const hr = now.getHours();
+          const night = hr < 6 || hr >= 19;
+          panel.dataset.phase = night ? 'night' : 'day';
+          $('#clockPhase').textContent = night ? '🌙' : (hr >= 17 ? '🌇' : '☀️');
+          $('#clockGreeting').textContent =
+            (hr < 5 ? 'Late night 🌌' : hr < 12 ? 'Good morning ☀️' : hr < 17 ? 'Good afternoon 🌤️' : hr < 21 ? 'Good evening 🌇' : 'Good night 🌙');
+        }
+      }
+
+      render();
+      if (prefersReducedMotion) {
+        setInterval(render, 1000);
+      } else {
+        (function loop() { requestAnimationFrame(loop); if (!document.hidden) render(); })();
+      }
     }
 
     /* ==========================================================================
@@ -328,7 +388,7 @@
         } else {
           p.x += p.vx + Math.sin(time / 2000 + p.ph) * .3; p.y += p.vy;
           const a = .3 + .5 * Math.abs(Math.sin(time / 1200 + p.ph));
-          ctx.fillStyle = 'rgba(253,224,71,' + a.toFixed(3) + ')';
+          ctx.fillStyle = 'rgba(222,134,18,' + a.toFixed(3) + ')';
           ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283); ctx.fill();
           if (p.y < -10 || p.x > W + 10) particles[i] = newParticle(mode, false);
         }
@@ -374,8 +434,7 @@
       try { saved = parseInt(localStorage.getItem('rd-weather'), 10) || 0; } catch (e) {}
       applyWeather(saved, true);
 
-      updateClock();
-      setInterval(updateClock, 30000);
+      startClock();
 
       startParticles();
       const sweep = $('#pageLightSweep');

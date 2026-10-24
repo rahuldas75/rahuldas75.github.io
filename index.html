@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#0B1F19" />
+  <meta name="theme-color" content="#EFE6CF" />
   <meta name="description" content="Rahul D — Developer, Gamer, Dreamer. Android & Flutter developer from Guwahati building calm, human software and AI workflows." />
   <title>Rahul D — Build • Create • Explore</title>
 
@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body data-weather="sunny">
+  <script>try{var i=parseInt(localStorage.getItem('rd-weather'),10);document.body.dataset.weather=['sunny','rain','night'][i]||'sunny'}catch(e){}</script>
 
 
   <!-- Watercolor Paper Texture -->
@@ -369,40 +370,61 @@
           </div>
         </div>
 
-        <!-- Right Hero Card: Valley Lighting & Sky Observatory (Replaces Quick Links) -->
-        <aside class="liquid-glass liquid-glass-interactive observatory-panel" aria-label="Valley Atmosphere & Sky Observatory">
+        <!-- Right Hero Card: Live Local Clock -->
+        <aside class="liquid-glass liquid-glass-interactive clock-panel" id="clockPanel" data-phase="day" aria-label="Live local time">
           <div class="panel-header" style="margin-bottom: 0;">
-            <span>Valley Observatory ✨</span>
-            <span class="live-ist-pill" id="guwahatiClock">IST • --:--</span>
+            <span>Local Time 🕰️</span>
+            <span class="live-ist-pill" id="clockZone">--</span>
           </div>
 
-          <div class="diorama-stage" onclick="triggerSpiritHello()" role="button" tabindex="0" aria-label="Interactive woodland lantern and forest spirit diorama" onkeydown="if(event.key==='Enter'||event.key===' ') triggerSpiritHello()">
-            <div>
-              <div style="font-size: 0.72rem; font-family: var(--font-mono); color: var(--emerald-accent);">BRAHMAPUTRA VALLEY</div>
-              <div style="font-size: 1.05rem; font-weight: 800; color: #FFFFFF; margin-top: 2px;" id="observatoryMoodTitle">Golden Sunbeams</div>
-              <div style="font-size: 0.76rem; color: var(--parchment); margin-top: 2px;" id="observatoryMoodSub">28°C • Gentle river breeze</div>
-            </div>
-            <svg width="88" height="84" viewBox="0 0 90 86" aria-hidden="true">
-              <circle class="anim-halo" cx="45" cy="42" r="34" fill="rgba(253, 224, 71, 0.22)" />
-              <g class="anim-sproutkin">
-                <ellipse cx="45" cy="68" rx="18" ry="5" fill="rgba(0,0,0,0.35)" />
-                <circle cx="45" cy="48" r="16" fill="#607C4B" stroke="#C3D6A4" stroke-width="1.5" />
-                <path d="M 39 33 C 32 16 20 22 31 36 Z" fill="#4ADE80" />
-                <path d="M 51 33 C 58 16 70 22 59 36 Z" fill="#4ADE80" />
-                <circle cx="40" cy="46" r="2.3" fill="#0B1F19" />
-                <circle cx="50" cy="46" r="2.3" fill="#0B1F19" />
-                <path d="M 42 52 Q 45 55 48 52" stroke="#0B1F19" stroke-width="1.5" fill="none" stroke-linecap="round" />
+          <div class="clock-wrap">
+            <svg id="analogClock" viewBox="0 0 200 200" role="img" aria-label="Analog clock showing the current local time">
+              <defs>
+                <radialGradient id="clockGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="88%" stop-color="var(--clock-glow)" stop-opacity="0.6" />
+                  <stop offset="100%" stop-color="var(--clock-glow)" stop-opacity="0" />
+                </radialGradient>
+                <radialGradient id="clockFace" cx="50%" cy="38%" r="70%">
+                  <stop offset="0%" stop-color="#1E4E38" />
+                  <stop offset="100%" stop-color="#0A1C15" />
+                </radialGradient>
+              </defs>
+
+              <circle class="anim-halo" cx="100" cy="100" r="98" fill="url(#clockGlow)" />
+              <circle cx="100" cy="100" r="90" fill="url(#clockFace)" stroke="var(--clock-rim)" stroke-width="3" />
+              <circle cx="100" cy="100" r="84" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+
+              <g id="clockTicks"></g>
+
+              <g font-family="Quicksand, sans-serif" font-weight="700" font-size="15" fill="#F5EBD5" text-anchor="middle">
+                <text x="100" y="45">12</text>
+                <text x="157" y="105">3</text>
+                <text x="100" y="166">6</text>
+                <text x="43" y="105">9</text>
               </g>
+
+              <text id="clockPhase" x="100" y="72" text-anchor="middle" font-size="15">☀️</text>
+
+              <g id="hourHand"><line x1="100" y1="106" x2="100" y2="60" stroke="#F2B568" stroke-width="6" stroke-linecap="round" /></g>
+              <g id="minuteHand"><line x1="100" y1="108" x2="100" y2="38" stroke="#F5EBD5" stroke-width="4" stroke-linecap="round" /></g>
+              <g id="secondHand">
+                <line x1="100" y1="120" x2="100" y2="26" stroke="#4ADE80" stroke-width="1.8" stroke-linecap="round" />
+                <circle cx="100" cy="122" r="3.5" fill="#4ADE80" />
+              </g>
+              <circle cx="100" cy="100" r="5.5" fill="#F2B568" stroke="#0B1F19" stroke-width="2" />
+              <circle cx="100" cy="100" r="2" fill="#0B1F19" />
             </svg>
+
+            <div class="digital-time">
+              <span id="clockDigital">--:--:--</span>
+            </div>
+            <div class="clock-date" id="clockDate">&nbsp;</div>
           </div>
 
-          <div>
-            <div style="font-size: 0.72rem; color: var(--sage); margin-bottom: 6px; font-weight: 600;"> Interactive Sky & Lighting Mood:</div>
-            <div class="mood-switcher-grid">
-              <button type="button" class="mood-chip active" data-weather-idx="0" onclick="setWeatherByIndex(0)">🌤️ Sunny</button>
-              <button type="button" class="mood-chip" data-weather-idx="1" onclick="setWeatherByIndex(1)">🌧️ Monsoon</button>
-              <button type="button" class="mood-chip" data-weather-idx="2" onclick="setWeatherByIndex(2)">🌙 Starlight</button>
-            </div>
+          <div class="clock-meta">
+            <span class="tech-pill" id="clockGreeting">Hello 🍃</span>
+            <span class="tech-pill" id="clockOffset">UTC</span>
+            <span class="tech-pill" id="clockTzName">Local timezone</span>
           </div>
         </aside>
       </section>
@@ -448,7 +470,7 @@
               <div class="app-brand-row">
                 <div class="matsi-app-icon">⛅</div>
                 <div>
-                  <h3 style="font-size: 1.15rem; font-weight: 800; color: #FFFFFF;">Matsi Weather</h3>
+                  <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--text-strong);">Matsi Weather</h3>
                   <span style="font-size: 0.74rem; color: var(--sage);">Simple. Clean. Local.</span>
                 </div>
               </div>
@@ -461,7 +483,7 @@
                 <a href="apps.html" class="pill-cta-btn">
                   Explore App <span>→</span>
                 </a>
-                <button type="button" class="pill-cta-btn" style="background: rgba(255,255,255,0.06); border-color: var(--glass-rim);" onclick="cycleWeatherEnvironment()">
+                <button type="button" class="pill-cta-btn" style="background: var(--tint); border-color: var(--glass-rim);" onclick="cycleWeatherEnvironment()">
                   Sky Mood 🔄
                 </button>
               </div>
@@ -473,9 +495,9 @@
               <div>
                 <div style="font-size: 0.65rem; color: rgba(255,255,255,0.85); font-weight: 600;" id="phoneCity">Guwahati</div>
                 <div style="font-size: 24px; margin: 2px 0;" id="phoneIcon">🌤️</div>
-                <div style="font-size: 1.35rem; font-weight: 800; color: #FFFFFF;" id="phoneTemp">28°C</div>
+                <div style="font-size: 1.35rem; font-weight: 800; color: var(--text-strong);" id="phoneTemp">28°C</div>
               </div>
-              <div style="font-size: 0.62rem; color: #FEF08A; background: rgba(0,0,0,0.38); padding: 3px 8px; border-radius: 99px;" id="phoneLabel">
+              <div style="font-size: 0.62rem; color: var(--text-accent); background: rgba(0,0,0,0.38); padding: 3px 8px; border-radius: 99px;" id="phoneLabel">
                 Sunny Valley
               </div>
             </div>
@@ -529,7 +551,7 @@
               <div class="status-badge" style="margin-bottom: 8px;">
                 <span>📓 FIELD NOTES & /NOW</span>
               </div>
-              <h3 style="font-size: 1.25rem; font-weight: 700; color: #FFFFFF;">From My Desk in Guwahati</h3>
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong);">From My Desk in Guwahati</h3>
               <p style="font-size: 0.88rem; color: var(--parchment); margin-top: 6px; line-height: 1.65;">
                 I enjoy crafting software that feels calm, human, and tactile—combining native mobile engineering with practical AI workflows and thoughtful UI design. When I'm not coding, you'll find me gaming, curating acoustic playlists, or exploring Assam.
               </p>

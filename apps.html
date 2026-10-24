@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#0B1F19" />
+  <meta name="theme-color" content="#EFE6CF" />
   <meta name="description" content="Rahul D — Developer, Gamer, Dreamer. Android & Flutter developer from Guwahati building calm, human software and AI workflows." />
   <title>Apps — Rahul D</title>
 
@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body data-weather="sunny">
+  <script>try{var i=parseInt(localStorage.getItem('rd-weather'),10);document.body.dataset.weather=['sunny','rain','night'][i]||'sunny'}catch(e){}</script>
 
 
   <!-- Watercolor Paper Texture -->
@@ -353,7 +354,7 @@
           <div class="app-brand-row" style="margin-top: 12px;">
             <div class="matsi-app-icon" style="width: 52px; height: 52px; font-size: 26px;">⛅</div>
             <div>
-              <h2 style="font-size: 1.55rem; font-weight: 800; color: #FFFFFF;">Matsi Weather</h2>
+              <h2 style="font-size: 1.55rem; font-weight: 800; color: var(--text-strong);">Matsi Weather</h2>
               <span style="font-size: 0.82rem; color: var(--sage);">Hyper-local forecasts & dynamic sky shaders for Northeast India</span>
             </div>
           </div>
@@ -381,7 +382,7 @@
             <a href="https://github.com/rahuldas75" target="_blank" rel="noopener noreferrer" class="pill-cta-btn">
               View Source on GitHub ↗
             </a>
-            <button type="button" class="pill-cta-btn" style="background: rgba(255,255,255,0.06); border-color: var(--glass-rim);" onclick="cycleWeatherEnvironment()">
+            <button type="button" class="pill-cta-btn" style="background: var(--tint); border-color: var(--glass-rim);" onclick="cycleWeatherEnvironment()">
               Test Live Sky Mood 🔄
             </button>
           </div>
@@ -399,7 +400,7 @@
               <div style="font-size: 0.85rem; font-weight: 700;" id="appPagePhoneCity">Guwahati, Assam</div>
               <div style="font-size: 44px; margin: 4px 0;" id="appPagePhoneIcon">🌤️</div>
               <div style="font-size: 2.2rem; font-weight: 800; line-height: 1;" id="appPagePhoneTemp">28°C</div>
-              <div style="font-size: 0.74rem; color: #FEF08A; margin-top: 6px;" id="appPagePhoneDesc">Sunny Valley • AQI 42 (Good)</div>
+              <div style="font-size: 0.74rem; color: var(--text-accent); margin-top: 6px;" id="appPagePhoneDesc">Sunny Valley • AQI 42 (Good)</div>
             </div>
 
             <div class="phone-forecast-mini">
