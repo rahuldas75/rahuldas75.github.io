@@ -1,0 +1,4 @@
+# Token Conservation Rules
+- Inspect only the lines or functions relevant to the prompt; avoid reading entire large files.
+- Deliver code modifications using concise, targeted changes rather than printing full duplicate files.
+- Keep diagnostic chat, commentary, and summaries strictly brief and actionable.
