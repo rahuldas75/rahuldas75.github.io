@@ -374,30 +374,23 @@
       <!-- 3. PRIMARY 4-CARD BENTO SHOWCASE (All Original Cards Preserved) -->
       <section class="showcase-bento-row" aria-label="Featured Highlights">
 
-        <!-- Card 1: Now Playing Spotify Widget Card -->
+        <!-- Card 1: Personal Audio Player -->
         <article class="liquid-glass liquid-glass-interactive bento-card">
           <div class="panel-header" style="margin-bottom: 0;">
             <span style="display: flex; align-items: center; gap: 8px; font-size: 0.95rem;">
               <span class="eq-bars" aria-hidden="true">
                 <span class="eq-bar"></span><span class="eq-bar"></span><span class="eq-bar"></span>
               </span>
-              Cottage Radio
+              My Audio
             </span>
-            <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer" style="color: var(--emerald-accent); text-decoration: none; font-size: 0.85rem;" title="Open Spotify">↗</a>
+            <a href="assets/audio/YuE2_00001.flac" style="color: var(--emerald-accent); text-decoration: none; font-size: 0.85rem;" title="Open audio file">↗</a>
           </div>
 
-          <div class="spotify-widget-wrapper">
-            <iframe
-              style="border-radius:12px; display: block;"
-              src="https://open.spotify.com/embed/track/7D0RhFcb3CrfPuTJ0obrod?utm_source=generator&theme=0"
-              width="100%"
-              height="152"
-              frameBorder="0"
-              allowfullscreen=""
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-              title="Spotify Player Widget">
-            </iframe>
+          <div class="audio-player-wrapper">
+            <audio class="audio-player" controls preload="metadata" aria-label="My audio player">
+              <source src="assets/audio/YuE2_00001.flac" type="audio/flac">
+              Your browser does not support the audio player.
+            </audio>
           </div>
         </article>
 

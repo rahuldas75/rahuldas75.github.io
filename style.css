@@ -814,12 +814,18 @@
       gap: 12px;
     }
 
-    .spotify-widget-wrapper {
+    .audio-player-wrapper {
       width: 100%;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
       margin-top: auto;
+    }
+
+    .audio-player {
+      display: block;
+      width: 100%;
+      min-height: 44px;
     }
 
     .featured-app-grid {
@@ -1373,7 +1379,7 @@
       .timeline-item { flex-direction: column; gap: 8px; }
       .changelog-row { flex-direction: column; gap: 6px; }
       .phone-chassis { width: 118px; height: 184px; }
-      .spotify-widget-wrapper iframe { height: 152px; }
+      .audio-player { min-height: 44px; }
     }
 
     @media (max-width: 360px) {
