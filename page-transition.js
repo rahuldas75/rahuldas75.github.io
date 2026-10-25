@@ -4,6 +4,27 @@
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var supportsNativeTransition = typeof document.startViewTransition === 'function';
   var transitionTimer;
+  var splashTimer;
+
+  function initSplash() {
+    var splash = document.querySelector('.site-splash');
+    if (!splash) return;
+
+    var seen = false;
+    try { seen = sessionStorage.getItem('rd-splash-seen') === '1'; } catch (e) {}
+    if (seen || reducedMotion) {
+      splash.remove();
+      return;
+    }
+
+    try { sessionStorage.setItem('rd-splash-seen', '1'); } catch (e) {}
+    document.documentElement.classList.add('splash-active');
+    splashTimer = setTimeout(function () {
+      document.documentElement.classList.remove('splash-active');
+      splash.classList.add('is-leaving');
+      setTimeout(function () { splash.remove(); }, reducedMotion ? 1 : 700);
+    }, reducedMotion ? 1 : 1450);
+  }
 
   function addLayer() {
     if (document.querySelector('.page-transition-layer')) return;
@@ -27,11 +48,12 @@
   }
 
   function navigateWithFallback(url) {
+    document.documentElement.classList.add('is-transitioning');
     document.documentElement.classList.add('is-page-transitioning');
     clearTimeout(transitionTimer);
     transitionTimer = setTimeout(function () {
       window.location.href = url;
-    }, reducedMotion ? 1 : 180);
+    }, reducedMotion ? 1 : 620);
   }
 
   function handleClick(event) {
@@ -42,11 +64,14 @@
   }
 
   function init() {
+    initSplash();
     addLayer();
     document.addEventListener('click', handleClick);
     window.addEventListener('pageshow', function () {
       clearTimeout(transitionTimer);
+      clearTimeout(splashTimer);
       document.documentElement.classList.remove('is-page-transitioning');
+      document.documentElement.classList.remove('is-transitioning');
     });
   }
 
