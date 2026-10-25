@@ -951,7 +951,7 @@
     }
 
     .proj-mini-text { min-width: 0; }
-    .proj-mini-text h5 {
+    .proj-mini-text h3 {
       font-size: 0.85rem;
       font-weight: 700;
       white-space: nowrap;

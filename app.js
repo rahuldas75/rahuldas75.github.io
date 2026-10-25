@@ -151,7 +151,7 @@
       $('#projectsContainer').innerHTML = C.projects.slice(0, 3).map(p =>
         '<a class="proj-mini-item" href="projects.html">' +
           '<div class="proj-mini-icon" style="background:' + p.bg + ';">' + p.icon + '</div>' +
-          '<div class="proj-mini-text"><h5>' + p.title + '</h5><span>' + p.tagline + '</span></div>' +
+          '<div class="proj-mini-text"><h3>' + p.title + '</h3><span>' + p.tagline + '</span></div>' +
         '</a>').join('');
 
       $('#changelogContainer').innerHTML = C.changelog.map(c =>
@@ -349,12 +349,20 @@
        SPECULAR HOVER GLOW (desktop pointers only)
        ========================================================================== */
     if (window.matchMedia('(hover: hover)').matches) {
+      let glowFrame = 0;
+      let glowEvent;
       document.addEventListener('pointermove', e => {
-        const card = e.target.closest && e.target.closest('.liquid-glass');
-        if (!card) return;
-        const r = card.getBoundingClientRect();
-        card.style.setProperty('--mouse-x', (e.clientX - r.left) + 'px');
-        card.style.setProperty('--mouse-y', (e.clientY - r.top) + 'px');
+        if (!e.target.closest || !e.target.closest('.liquid-glass')) return;
+        glowEvent = e;
+        if (glowFrame) return;
+        glowFrame = requestAnimationFrame(() => {
+          glowFrame = 0;
+          const card = glowEvent.target.closest('.liquid-glass');
+          if (!card) return;
+          const r = card.getBoundingClientRect();
+          card.style.setProperty('--mouse-x', (glowEvent.clientX - r.left) + 'px');
+          card.style.setProperty('--mouse-y', (glowEvent.clientY - r.top) + 'px');
+        });
       }, { passive: true });
     }
 
