@@ -194,13 +194,13 @@
        WEATHER / SKY MOODS
        ========================================================================== */
     const WEATHER_MODES = [
-      { key: 'sunny', icon: '🌤️', label: 'Sunny', temp: '28°C',
+      { key: 'sunny', icon: '🌤️', label: 'Light', temp: '28°C',
         title: 'Golden Sunbeams', sub: '28°C • Gentle river breeze',
         phoneLabel: 'Sunny Valley', desc: 'Sunny Valley • AQI 42 (Good)', toast: 'Golden hour over the valley ☀️' },
       { key: 'rain', icon: '🌧️', label: 'Monsoon', temp: '24°C',
         title: 'Monsoon Mist', sub: '24°C • Rain over the Brahmaputra',
         phoneLabel: 'Monsoon Showers', desc: 'Monsoon Showers • AQI 28 (Good)', toast: 'Monsoon has arrived 🌧️' },
-      { key: 'night', icon: '🌙', label: 'Starlight', temp: '21°C',
+      { key: 'night', icon: '🌙', label: 'Dark', temp: '21°C',
         title: 'Starlit Valley', sub: '21°C • Fireflies by the river',
         phoneLabel: 'Clear Night', desc: 'Clear Night • AQI 35 (Good)', toast: 'Starlight and fireflies 🌙' }
     ];
@@ -283,6 +283,10 @@
     }
 
     function buildParticles() {
+      if (isMobile()) {
+        particles = [];
+        return;
+      }
       const mode = WEATHER_MODES[weatherIdx].key;
       const small = isMobile();
       const count = mode === 'rain' ? (small ? 60 : 120) : (small ? 20 : 40);
@@ -325,6 +329,7 @@
     }
 
     function startParticles() {
+      if (isMobile()) return;
       resizeCanvas();
       buildParticles();
       if (prefersReducedMotion) return;
@@ -332,7 +337,7 @@
     }
 
     function resumeParticles() {
-      if (!prefersReducedMotion && !document.hidden && !rafId) {
+      if (!isMobile() && !prefersReducedMotion && !document.hidden && !rafId) {
         rafId = requestAnimationFrame(frame);
       }
     }
