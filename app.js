@@ -54,7 +54,7 @@
           desc: "A small, battery-friendly native utility currently in the workshop.",
           tags: ["Kotlin", "Android SDK"],
           bg: "linear-gradient(135deg, rgba(74,222,128,.28), rgba(23,63,50,.5))",
-          link: "apps.html", cta: "Coming soon"
+          link: "app/", cta: "Coming soon"
         },
         {
           title: "Flutter Companion App", icon: "🌿", cats: "flutter",
@@ -62,7 +62,7 @@
           desc: "A cross-platform companion app idea taking shape.",
           tags: ["Flutter", "Dart"],
           bg: "linear-gradient(135deg, rgba(242,181,104,.35), rgba(96,124,75,.4))",
-          link: "apps.html", cta: "Coming soon"
+          link: "app/", cta: "Coming soon"
         }
       ],
 
@@ -93,6 +93,8 @@
       dataset: {}, style: {}, addEventListener() {}, setAttribute() {} };
     const $ = (s, r) => (r || document).querySelector(s) || NOOP;
     const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+    const siteRoute = path =>
+      /\/(?:app|about|projects)\/?$/.test(window.location.pathname) ? '../' + path : path;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const isMobile = () => window.innerWidth <= 820;
 
@@ -130,6 +132,7 @@
     function cardHTML(item, ctaDefault) {
       const external = /^https?:/.test(item.link);
       const attrs = external ? ' target="_blank" rel="noopener noreferrer"' : '';
+      const href = external ? item.link : siteRoute(item.link);
       return '' +
         '<article class="liquid-glass liquid-glass-interactive showcase-card" data-cat="' + item.cats + '">' +
           '<div class="card-graphic-banner" style="background:' + item.bg + ';">' +
@@ -141,7 +144,7 @@
             '<p style="font-size:.84rem;color:var(--parchment);margin-top:6px;line-height:1.6;">' + item.desc + '</p>' +
           '</div>' +
           '<div class="tech-pill-cloud">' + pills(item.tags) + '</div>' +
-          '<div><a class="pill-cta-btn" href="' + item.link + '"' + attrs + '>' + (item.cta || ctaDefault) + '</a></div>' +
+          '<div><a class="pill-cta-btn" href="' + href + '"' + attrs + '>' + (item.cta || ctaDefault) + '</a></div>' +
         '</article>';
     }
 
@@ -149,7 +152,7 @@
       const C = PORTFOLIO_CONFIG;
 
       $('#projectsContainer').innerHTML = C.projects.slice(0, 3).map(p =>
-        '<a class="proj-mini-item" href="projects.html">' +
+        '<a class="proj-mini-item" href="' + siteRoute('projects/') + '">' +
           '<div class="proj-mini-icon" style="background:' + p.bg + ';">' + p.icon + '</div>' +
           '<div class="proj-mini-text"><h3>' + p.title + '</h3><span>' + p.tagline + '</span></div>' +
         '</a>').join('');

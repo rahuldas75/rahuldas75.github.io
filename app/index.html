@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#EFE6CF" />
+  <meta name="description" content="Rahul D — Developer, Gamer, Dreamer. Android & Flutter developer from Guwahati building calm, human software and AI workflows." />
+  <title>Apps — Rahul D</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="../style.css" as="style">
+  <link rel="stylesheet" href="../style.css" />
+  <script src="../page-transition.js" defer></script>
+</head>
+<body data-weather="sunny">
+  <script>try{var i=parseInt(localStorage.getItem('rd-weather'),10);document.body.dataset.weather=['sunny','rain','night'][i]||'sunny'}catch(e){}</script>
+
+  <div class="site-splash" role="status" aria-label="Loading Rahul D portfolio">
+    <div class="splash-core">
+      <div class="splash-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#4ADE80" stroke-width="2"><path d="M6 39h36L28 11l-8 14-5-7L6 39Z" /><circle cx="35" cy="11" r="3" /></svg>
+      </div>
+      <div class="splash-kicker">Portfolio system / 2026</div>
+      <div class="splash-title">Rahul D</div>
+      <div class="splash-subtitle">BUILD • CREATE • EXPLORE</div>
+      <div class="splash-progress" aria-hidden="true"><span></span></div>
+    </div>
+  </div>
+
+  <!-- Watercolor Paper Texture -->
+  <div class="watercolor-grain" aria-hidden="true"></div>
+
+  <!-- Optical Page Transition Light Sweep -->
+  <div class="page-light-sweep" id="pageLightSweep" aria-hidden="true"></div>
+
+  <!-- Copy / Action Feedback Toast -->
+  <div class="toast-notification" id="toastNotification" role="status" aria-live="polite"></div>
+
+  <!-- ==========================================================================
+       BACKGROUND LAYER: FULL-BLEED WOODLAND VERANDA & RIVER VALLEY
+       ========================================================================== -->
+  <div class="world-stage" aria-hidden="true">
+    <!-- Desktop Landscape SVG -->
+    <svg class="world-svg desktop-world-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="skyGradient" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="var(--sky-top)" />
+          <stop offset="55%" stop-color="var(--sky-mid)" />
+          <stop offset="100%" stop-color="var(--sky-horizon)" />
+        </linearGradient>
+        <linearGradient id="riverGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#38BDF8" />
+          <stop offset="45%" stop-color="#0284C7" />
+          <stop offset="100%" stop-color="#0F766E" />
+        </linearGradient>
+        <radialGradient id="amberGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FDE047" stop-opacity="0.95" />
+          <stop offset="45%" stop-color="#F2B568" stop-opacity="0.45" />
+          <stop offset="100%" stop-color="#F2B568" stop-opacity="0" />
+        </radialGradient>
+        <radialGradient id="sunHalo" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FEF08A" stop-opacity="0.95" />
+          <stop offset="40%" stop-color="#FDE047" stop-opacity="0.35" />
+          <stop offset="100%" stop-color="#FDE047" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+
+      <!-- 1. SKY & CELESTIAL BODIES -->
+      <rect width="1440" height="900" fill="url(#skyGradient)" />
+
+      <!-- Sunny Mode: Sun Corona & Gliding Birds -->
+      <g class="celestial-sun">
+        <circle class="anim-halo" cx="840" cy="145" r="115" fill="url(#sunHalo)" />
+        <circle cx="840" cy="145" r="36" fill="#FEF9C3" />
+        <g class="anim-birds" stroke="#1E3A5F" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.65">
+          <path d="M 420 210 Q 428 202 435 210 Q 442 202 450 210" />
+          <path d="M 455 196 Q 461 190 467 196 Q 473 190 479 196" />
+          <path d="M 438 225 Q 444 219 450 225 Q 456 219 462 225" />
+        </g>
+      </g>
+
+      <!-- Night Mode: Crescent Moon, Constellation Stars & Shooting Star -->
+      <g class="celestial-moon">
+        <g fill="#FEF9C3">
+          <circle class="anim-star-1" cx="390" cy="88" r="2.2" />
+          <circle class="anim-star-2" cx="520" cy="128" r="1.8" />
+          <circle class="anim-star-3" cx="680" cy="74" r="2.5" />
+          <circle class="anim-star-1" cx="790" cy="140" r="1.6" />
+          <circle class="anim-star-2" cx="960" cy="82" r="2.4" />
+          <circle class="anim-star-3" cx="1090" cy="130" r="1.9" />
+          <circle class="anim-star-1" cx="610" cy="180" r="1.7" />
+        </g>
+        <line class="anim-meteor" x1="980" y1="70" x2="1045" y2="42" stroke="#FEF9C3" stroke-width="2.2" stroke-linecap="round" />
+        <circle class="anim-halo" cx="880" cy="135" r="78" fill="url(#sunHalo)" opacity="0.55" />
+        <path d="M 868 98 A 38 38 0 1 0 908 156 A 30 30 0 1 1 868 98 Z" fill="#FEF9C3" />
+      </g>
+
+      <g class="anim-cloud-slow" opacity="0.88" fill="#FFFFFF">
+        <circle cx="580" cy="150" r="48" />
+        <circle cx="635" cy="140" r="62" />
+        <circle cx="700" cy="148" r="52" />
+        <circle cx="755" cy="160" r="38" />
+        <rect x="560" y="150" width="210" height="45" rx="22" />
+      </g>
+      <g class="anim-cloud-med" opacity="0.72" fill="#FFFBEB">
+        <circle cx="980" cy="115" r="36" />
+        <circle cx="1025" cy="105" r="48" />
+        <circle cx="1075" cy="118" r="34" />
+      </g>
+
+      <!-- 2. DISTANT BLUE-GREEN MOUNTAINS & MIST -->
+      <path d="M 0 430 L 190 270 L 350 365 L 540 210 L 740 350 L 940 225 L 1160 360 L 1350 250 L 1440 320 L 1440 550 L 0 550 Z" fill="#3B6E6C" opacity="0.55" />
+      <path d="M 0 460 L 140 340 L 310 420 L 490 295 L 690 410 L 890 310 L 1120 420 L 1440 340 L 1440 580 L 0 580 Z" fill="#285948" opacity="0.8" />
+      <g class="valley-mist anim-mist" fill="#E2E8F0">
+        <rect x="180" y="385" width="460" height="22" rx="11" opacity="0.28" />
+        <rect x="680" y="360" width="520" height="18" rx="9" opacity="0.22" />
+      </g>
+
+      <!-- 3. LUSH GREEN VALLEY HILLS -->
+      <path d="M 0 480 Q 320 410 650 475 T 1440 450 L 1440 700 L 0 700 Z" fill="#234F3C" />
+      <g transform="translate(610, 442)">
+        <path d="M 0 30 Q 65 5 130 30 L 130 46 L 0 46 Z" fill="#94A3B8" />
+        <circle cx="35" cy="44" r="14" fill="#1E293B" />
+        <circle cx="68" cy="44" r="16" fill="#1E293B" />
+        <circle cx="100" cy="44" r="14" fill="#1E293B" />
+      </g>
+
+      <!-- 4. WINDING EMERALD-BLUE RIVER -->
+      <path d="M 650 475 C 580 515 430 535 350 585 C 260 640 180 730 120 900 L 1180 900 C 1060 720 920 620 820 555 C 745 505 710 490 650 475 Z" fill="url(#riverGrad)" />
+      <g class="anim-water" stroke="#E0F2FE" stroke-width="2.5" stroke-linecap="round">
+        <line x1="590" y1="510" x2="660" y2="510" />
+        <line x1="520" y1="545" x2="630" y2="545" />
+        <line x1="460" y1="585" x2="590" y2="585" />
+        <line x1="540" y1="625" x2="710" y2="625" />
+        <line x1="420" y1="675" x2="640" y2="675" />
+      </g>
+
+      <!-- 5. COTTAGE VERANDA WOODEN DECK & HEARTH -->
+      <g fill="#5C3A21" stroke="#3A2210" stroke-width="2">
+        <rect x="280" y="540" width="14" height="95" rx="3" />
+        <rect x="460" y="555" width="14" height="90" rx="3" />
+        <rect x="640" y="565" width="14" height="90" rx="3" />
+        <rect x="240" y="555" width="520" height="12" rx="4" transform="rotate(2.5 240 555)" />
+        <rect x="920" y="535" width="220" height="16" rx="4" fill="#6E472B" />
+        <rect x="950" y="551" width="18" height="85" />
+        <rect x="1090" y="551" width="18" height="85" />
+      </g>
+      <rect x="0" y="100" width="90" height="800" fill="#3D2616" />
+      <rect x="85" y="130" width="18" height="600" fill="#52341E" />
+
+      <g class="anim-lantern">
+        <line x1="115" y1="145" x2="115" y2="195" stroke="#27170C" stroke-width="3" />
+        <circle class="anim-halo" cx="115" cy="222" r="72" fill="url(#amberGlow)" />
+        <polygon points="98,195 132,195 126,242 104,242" fill="#FDE047" stroke="#422006" stroke-width="3" />
+        <path d="M 92 195 L 138 195 L 125 182 L 105 182 Z" fill="#27170C" />
+      </g>
+
+      <g>
+        <circle class="anim-halo" cx="95" cy="555" r="92" fill="url(#amberGlow)" />
+        <g class="anim-fire">
+          <path d="M 72 575 Q 88 530 96 518 Q 106 532 118 575 Z" fill="#F97316" />
+          <path d="M 82 575 Q 95 542 97 532 Q 103 542 110 575 Z" fill="#FDE047" />
+        </g>
+        <ellipse cx="96" cy="548" rx="28" ry="20" fill="#1E293B" stroke="#475569" stroke-width="2.5" />
+        <rect x="64" y="532" width="64" height="6" rx="3" fill="#334155" />
+        <path class="anim-steam-1" d="M 88 525 Q 82 505 94 490 Q 104 475 92 458" stroke="#F5EBD5" stroke-width="2.5" fill="none" stroke-linecap="round" />
+        <path class="anim-steam-2" d="M 104 525 Q 112 505 100 490 Q 90 475 102 458" stroke="#F5EBD5" stroke-width="2" fill="none" stroke-linecap="round" />
+      </g>
+
+      <rect x="135" y="568" width="230" height="16" rx="5" fill="#7C5333" stroke="#432812" stroke-width="2" />
+      <rect x="315" y="550" width="16" height="18" rx="3" fill="#E2E8F0" />
+
+      <g class="anim-ginger-cat">
+        <ellipse cx="235" cy="556" rx="34" ry="20" fill="#EA580C" />
+        <ellipse cx="235" cy="562" rx="26" ry="11" fill="#FFEDD5" />
+        <circle cx="210" cy="556" r="16" fill="#EA580C" />
+        <polygon points="196,544 204,534 208,545" fill="#EA580C" />
+        <polygon points="214,545 220,534 225,545" fill="#EA580C" />
+      </g>
+
+      <g class="anim-sproutkin">
+        <circle cx="620" cy="548" r="16" fill="#607C4B" stroke="#A9BE92" stroke-width="1.5" />
+        <path d="M 614 533 C 608 515 595 520 606 535 Z" fill="#4ADE80" />
+        <path d="M 626 533 C 632 515 645 520 634 535 Z" fill="#4ADE80" />
+        <circle cx="615" cy="546" r="2.5" fill="#0B1F19" />
+        <circle cx="625" cy="546" r="2.5" fill="#0B1F19" />
+      </g>
+
+      <g>
+        <ellipse cx="1025" cy="508" rx="20" ry="28" fill="#1E293B" />
+        <ellipse cx="1018" cy="512" rx="12" ry="22" fill="#F8FAFC" />
+        <circle cx="1022" cy="474" r="14" fill="#1E293B" />
+        <polygon points="1010,464 1014,450 1022,462" fill="#1E293B" />
+        <polygon points="1024,462 1032,450 1035,464" fill="#1E293B" />
+        <path class="anim-cat-tail" d="M 1038 528 Q 1062 518 1058 495" stroke="#1E293B" stroke-width="7" stroke-linecap="round" fill="none" />
+      </g>
+
+      <!-- 6. TOP OVERHANGING TREE CANOPY -->
+      <g class="anim-canopy">
+        <circle cx="120" cy="40" r="140" fill="#133829" />
+        <circle cx="310" cy="10" r="120" fill="#1E4E38" />
+        <circle cx="520" cy="-10" r="110" fill="#286646" opacity="0.9" />
+        <circle cx="1180" cy="20" r="130" fill="#133829" />
+        <circle cx="1360" cy="70" r="150" fill="#0F2D21" />
+      </g>
+    </svg>
+
+    <!-- Mobile Portrait SVG Scene -->
+    <svg class="world-svg mobile-world-svg" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="mobileSky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="var(--sky-top)"/><stop offset="58%" stop-color="var(--sky-mid)"/><stop offset="100%" stop-color="var(--sky-horizon)"/>
+        </linearGradient>
+        <linearGradient id="mobileRiver" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#83D2D0"/><stop offset="55%" stop-color="#2E8E91"/><stop offset="100%" stop-color="#185C57"/>
+        </linearGradient>
+        <radialGradient id="mobileGlow"><stop offset="0%" stop-color="#FDE68A" stop-opacity=".85"/><stop offset="100%" stop-color="#F2B568" stop-opacity="0"/></radialGradient>
+      </defs>
+      <rect width="390" height="844" fill="#18382B"/>
+      <rect width="390" height="844" fill="url(#mobileSky)" opacity=".12"/>
+      <path d="M0 0H390V150L365 170V545H25V170L0 150Z" fill="#254936"/>
+      <path d="M0 68L390 38M0 86L390 56" stroke="#42664A" stroke-width="12" opacity=".7"/>
+      <rect x="18" y="106" width="354" height="345" rx="12" fill="#533923" stroke="#8B6741" stroke-width="7"/>
+      <rect x="31" y="119" width="328" height="319" rx="4" fill="url(#mobileSky)"/>
+
+      <!-- Mobile Sun / Moon & Stars -->
+      <g class="celestial-sun">
+        <circle class="anim-halo" cx="275" cy="168" r="42" fill="url(#mobileGlow)"/>
+        <circle cx="275" cy="168" r="16" fill="#FEF9C3"/>
+      </g>
+      <g class="celestial-moon">
+        <circle class="anim-star-1" cx="95" cy="148" r="1.8" fill="#FEF9C3"/>
+        <circle class="anim-star-2" cx="165" cy="142" r="1.5" fill="#FEF9C3"/>
+        <circle class="anim-star-3" cx="220" cy="162" r="2.0" fill="#FEF9C3"/>
+        <path d="M 272 148 A 18 18 0 1 0 292 176 A 14 14 0 1 1 272 148 Z" fill="#FEF9C3"/>
+      </g>
+
+      <g class="anim-cloud-slow" fill="#FFF9DF" opacity=".7">
+        <ellipse cx="120" cy="166" rx="40" ry="15"/><ellipse cx="143" cy="159" rx="31" ry="19"/><ellipse cx="164" cy="170" rx="34" ry="13"/>
+      </g>
+      <path d="M31 286L92 205L129 253L184 182L247 264L299 210L359 270V438H31Z" fill="#537D75" opacity=".9"/>
+      <path d="M31 316Q90 277 147 308T256 298T359 305V438H31Z" fill="#316B4A"/>
+      <g class="valley-mist anim-mist" fill="#E2E8F0">
+        <rect x="55" y="295" width="220" height="12" rx="6" opacity=".28"/>
+      </g>
+      <path d="M31 354Q95 337 132 365T219 365T359 344V438H31Z" fill="#245B3E"/>
+      <path d="M116 349C151 358 182 367 184 390C186 409 157 422 137 438H304C281 410 254 390 238 375C213 352 179 348 160 342Z" fill="url(#mobileRiver)"/>
+      <g class="anim-water" stroke="#D9F8E9" stroke-width="2" stroke-linecap="round" opacity=".7"><path d="M180 379h22M202 398h35M164 418h48"/></g>
+      <g fill="#102D21" opacity=".95">
+        <path d="M31 119Q18 160 31 215Q38 176 53 153Q49 126 31 119Z"/><path d="M359 119Q378 158 359 221Q351 180 337 154Q341 130 359 119Z"/>
+        <circle cx="47" cy="130" r="35"/><circle cx="78" cy="112" r="27"/><circle cx="344" cy="125" r="38"/><circle cx="315" cy="104" r="28"/>
+      </g>
+      <path d="M23 455H367V487H23Z" fill="#764F32" stroke="#3F291D" stroke-width="4"/>
+      <path d="M34 465H356M34 478H356" stroke="#A8784B" stroke-width="2" opacity=".7"/>
+      <rect x="0" y="548" width="390" height="296" fill="#1B3328" opacity=".78"/>
+      <path d="M0 563Q95 548 195 562T390 558V844H0Z" fill="#254333"/>
+      <rect x="15" y="553" width="360" height="15" rx="4" fill="#805B39" stroke="#4B3322" stroke-width="2"/>
+      <g>
+        <circle class="anim-halo" cx="63" cy="522" r="44" fill="url(#mobileGlow)"/>
+        <rect x="54" y="505" width="18" height="45" rx="4" fill="#F2D9A4"/>
+        <path d="M50 506H76L72 499H55Z" fill="#C6A36E"/>
+        <path class="anim-candle-flame" d="M63 501C52 492 65 483 64 475C76 488 76 494 63 501Z" fill="#FBBF66"/>
+      </g>
+      <g>
+        <circle class="anim-halo" cx="303" cy="520" r="60" fill="url(#mobileGlow)"/>
+        <g class="anim-fire"><path d="M278 557Q287 525 301 513Q305 532 324 557Z" fill="#F97316"/><path d="M291 557Q299 537 302 530Q312 542 313 557Z" fill="#FDE047"/></g>
+        <path d="M273 548H326L320 580H280Z" fill="#33443B" stroke="#9CA99A" stroke-width="3"/>
+        <ellipse cx="300" cy="548" rx="28" ry="8" fill="#19291F" stroke="#829488" stroke-width="2"/>
+        <circle class="anim-pot-bubble bubble-a" cx="291" cy="546" r="3" fill="#FDE68A"/>
+        <circle class="anim-pot-bubble bubble-b" cx="302" cy="544" r="2.5" fill="#FDE68A"/>
+        <circle class="anim-pot-bubble bubble-c" cx="311" cy="547" r="2" fill="#FDE68A"/>
+        <path class="anim-steam-1" d="M291 537Q278 520 291 506T292 483" stroke="#F5EBD5" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path class="anim-steam-2" d="M309 537Q321 519 309 506T311 488" stroke="#F5EBD5" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M277 575L268 589M322 575L331 589" stroke="#A9BE92" stroke-width="4" stroke-linecap="round"/>
+      </g>
+      <g fill="#815738" stroke="#4B3322" stroke-width="2"><rect x="23" y="588" width="67" height="12" rx="6" transform="rotate(-8 23 588)"/><rect x="25" y="604" width="71" height="12" rx="6" transform="rotate(7 25 604)"/><rect x="35" y="620" width="59" height="12" rx="6" transform="rotate(-4 35 620)"/></g>
+      <g transform="translate(180 530)">
+        <g class="anim-sproutkin">
+          <ellipse cx="0" cy="24" rx="19" ry="5" fill="#0E2119" opacity=".5"/>
+          <path d="M-15 19Q-20 -7 0 -13Q20 -7 15 19Q0 31 -15 19Z" fill="#7D9A60" stroke="#C3D6A4" stroke-width="1.5"/>
+          <path d="M-5 -10Q-21 -31 -25 -13Q-18 -3 -5 -3Z" fill="#4ADE80"/><path d="M5 -10Q21 -31 25 -13Q18 -3 5 -3Z" fill="#6BCB77"/>
+          <ellipse cx="-5" cy="6" rx="2.3" ry="3" fill="#10251C"/><ellipse cx="5" cy="6" rx="2.3" ry="3" fill="#10251C"/>
+          <path d="M-3 13Q0 16 3 13" fill="none" stroke="#10251C" stroke-width="1.5" stroke-linecap="round"/>
+        </g>
+      </g>
+      <g fill="#476D4A" opacity=".9"><path d="M0 660Q24 633 37 672Q18 682 0 660Z"/><path d="M390 689Q360 655 352 699Q373 709 390 689Z"/><path d="M0 730Q26 704 40 744Q20 752 0 730Z"/></g>
+    </svg>
+  </div>
+
+  <!-- Volumetric Crepuscular God-Rays & Ambient Bloom Lighting -->
+  <div class="volumetric-lighting" aria-hidden="true">
+    <div class="god-rays"></div>
+    <div class="ambient-bloom bloom-1"></div>
+    <div class="ambient-bloom bloom-2"></div>
+  </div>
+
+  <!-- Particle Canvas for Fireflies, Golden Pollen, Hearth Embers, or Monsoon Rain -->
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+  <div class="world-vignette" aria-hidden="true"></div>
+
+  <!-- ==========================================================================
+       MAIN INTERFACE SHELL
+       ========================================================================== -->
+  <div class="page-shell">
+
+    <header class="liquid-glass top-navbar">
+      <a href="../index.html" class="brand-identity">
+        <div class="mountain-emblem" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2">
+            <path d="M3 20h18L14 6l-4 7-3-4-4 11z" />
+            <circle cx="18" cy="6" r="1.5" fill="#FDE047" stroke="none" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h2>Rahul D</h2>
+          <span>Build • Create • Explore</span>
+        </div>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-pill-group">
+          <li><a href="../index.html" class="nav-pill">Home</a></li>
+          <li><a href="../app/" class="nav-pill">Apps</a></li>
+          <li><a href="../projects/" class="nav-pill">Projects</a></li>
+          <li><a href="../about/" class="nav-pill">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-controls">
+        <button type="button" class="weather-pill-btn" id="weatherCycleTopBtn" title="Cycle display mode (Light / Monsoon / Dark)" aria-label="Cycle display mode">
+          <span id="navWeatherIcon">🌤️</span>
+          <span id="navWeatherLabel">Sunny</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="page-view active-page" id="page-apps" data-page="apps">
+
+      <section class="liquid-glass subpage-banner">
+        <div>
+          <div class="status-badge" style="margin-bottom: 8px;">
+            <span class="status-dot"></span>
+            <span>📱 ANDROID & FLUTTER CRAFT</span>
+          </div>
+          <h1 class="subpage-title">Apps & Mobile Utilities</h1>
+          <p class="subpage-sub">
+            Calm, fast, battery-friendly mobile software crafted for everyday utility—led by Matsi Weather for Guwahati & Northeast India.
+          </p>
+        </div>
+
+        <div class="filter-pill-bar" id="appFilterBar">
+          <button type="button" class="filter-btn active" onclick="filterApps('all', this)">All Apps</button>
+          <button type="button" class="filter-btn" onclick="filterApps('flutter', this)">Flutter</button>
+          <button type="button" class="filter-btn" onclick="filterApps('android', this)">Android Native</button>
+          <button type="button" class="filter-btn" onclick="filterApps('utility', this)">Utilities</button>
+        </div>
+      </section>
+
+      <!-- Flagship App Spotlight: Matsi Weather -->
+      <section class="liquid-glass liquid-glass-interactive flagship-app-showcase">
+        <div>
+          <div style="font-size: 0.82rem; font-weight: 700; color: var(--firelight-amber);">
+            ⭐ FLAGSHIP ANDROID & FLUTTER RELEASE
+          </div>
+          <div class="app-brand-row" style="margin-top: 12px;">
+            <div class="matsi-app-icon" style="width: 52px; height: 52px; font-size: 26px;">⛅</div>
+            <div>
+              <h2 style="font-size: 1.55rem; font-weight: 800; color: var(--text-strong);">Matsi Weather</h2>
+              <span style="font-size: 0.82rem; color: var(--sage);">Hyper-local forecasts & dynamic sky shaders for Northeast India</span>
+            </div>
+          </div>
+
+          <p style="font-size: 0.92rem; color: var(--parchment); margin-top: 10px; line-height: 1.65;">
+            Built with Flutter and clean REST architecture, Matsi Weather translates live meteorological telemetry into serene, glanceable sky gradients without ad clutter or background battery drain.
+          </p>
+
+          <div class="app-metrics-grid">
+            <div class="metric-tile">
+              <div class="metric-val">60 FPS</div>
+              <span class="metric-lbl">Dynamic Sky Canvas</span>
+            </div>
+            <div class="metric-tile">
+              <div class="metric-val">NE India</div>
+              <span class="metric-lbl">Guwahati • Shillong • Assam</span>
+            </div>
+            <div class="metric-tile">
+              <div class="metric-val">Flutter 3</div>
+              <span class="metric-lbl">Offline-first Cache</span>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <a href="https://github.com/rahuldas75" target="_blank" rel="noopener noreferrer" class="pill-cta-btn">
+              View Source on GitHub ↗
+            </a>
+            <button type="button" class="pill-cta-btn" style="background: var(--tint); border-color: var(--glass-rim);" onclick="cycleWeatherEnvironment()">
+              Test Live Sky Mood 🔄
+            </button>
+          </div>
+        </div>
+
+        <!-- Large Interactive Phone Preview -->
+        <div>
+          <div class="large-phone-mockup" onclick="cycleWeatherEnvironment()" role="button" tabindex="0" aria-label="Tap to cycle live weather simulation" onkeydown="if(event.key==='Enter'||event.key===' ') cycleWeatherEnvironment()">
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.68rem; opacity: 0.85;">
+              <span>Matsi Weather</span>
+              <span>LIVE • GPS</span>
+            </div>
+
+            <div style="text-align: center; margin: 10px 0;">
+              <div style="font-size: 0.85rem; font-weight: 700;" id="appPagePhoneCity">Guwahati, Assam</div>
+              <div style="font-size: 44px; margin: 4px 0;" id="appPagePhoneIcon">🌤️</div>
+              <div style="font-size: 2.2rem; font-weight: 800; line-height: 1;" id="appPagePhoneTemp">28°C</div>
+              <div style="font-size: 0.74rem; color: var(--text-accent); margin-top: 6px;" id="appPagePhoneDesc">Sunny Valley • AQI 42 (Good)</div>
+            </div>
+
+            <div class="phone-forecast-mini">
+              <div>
+                <div style="opacity: 0.75;">14:00</div>
+                <div style="font-size: 14px; margin: 2px 0;">☀️</div>
+                <div style="font-weight: 700;">29°</div>
+              </div>
+              <div>
+                <div style="opacity: 0.75;">17:00</div>
+                <div style="font-size: 14px; margin: 2px 0;">⛅</div>
+                <div style="font-weight: 700;">25°</div>
+              </div>
+              <div>
+                <div style="opacity: 0.75;">20:00</div>
+                <div style="font-size: 14px; margin: 2px 0;">🌙</div>
+                <div style="font-weight: 700;">21°</div>
+              </div>
+            </div>
+          </div>
+          <div style="text-align: center; font-size: 0.74rem; color: var(--sage); margin-top: 10px;">
+            Tap the phone screen to switch live valley weather
+          </div>
+        </div>
+      </section>
+
+      <!-- All Apps Grid -->
+      <section class="cards-grid-3" id="appsGridContainer" aria-label="Mobile Apps & Utilities">
+        <!-- Populated dynamically from PORTFOLIO_CONFIG.appsList -->
+      </section>
+
+    </main>
+
+    <footer class="liquid-glass woodland-footer">
+      <span>© <span id="footerYear">2026</span> Rahul D • Built in Guwahati 🍃</span>
+      <span style="color: var(--sage);">Build • Create • Explore</span>
+    </footer>
+
+  </div>
+
+  <nav class="liquid-glass mobile-bottom-dock" aria-label="Mobile Navigation">
+    <a href="../index.html" class="dock-link"><span>🏡</span>Home</a>
+    <a href="../app/" class="dock-link"><span>📱</span>Apps</a>
+    <a href="../projects/" class="dock-link"><span>📁</span>Projects</a>
+    <a href="../about/" class="dock-link"><span>🍃</span>About</a>
+  </nav>
+
+  <script src="../app.js" defer></script>
+</body>
+</html>

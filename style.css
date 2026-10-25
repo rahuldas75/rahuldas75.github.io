@@ -184,6 +184,11 @@
       transform: scale(1);
     }
 
+    html.is-transitioning .page-transition-layer::before {
+      animation-duration: 720ms;
+      opacity: 0.5;
+    }
+
     html.is-transitioning .page-transition-layer::after {
       opacity: 1;
       animation: portalBurst 680ms var(--smooth) both;
@@ -205,7 +210,7 @@
       isolation: isolate;
       color: #F4F7FF;
       background: #050C14;
-      animation: splashReveal 900ms var(--smooth) both;
+      animation: splashReveal 420ms var(--smooth) both;
     }
 
     .site-splash::before,
@@ -230,13 +235,13 @@
       opacity: .25;
       background: repeating-linear-gradient(0deg, transparent 0 5px, rgba(255,255,255,.10) 6px 7px);
       transform: rotate(-8deg);
-      animation: splashScan 1.8s linear infinite;
+      animation: splashScan 2.4s linear infinite;
     }
 
     .splash-core {
       width: min(88vw, 520px);
       text-align: center;
-      animation: splashCoreIn 900ms .12s var(--smooth) both;
+      animation: splashCoreIn 560ms .04s var(--smooth) both;
     }
 
     .splash-mark {
@@ -249,7 +254,7 @@
       border-radius: 28px;
       background: linear-gradient(135deg, rgba(74,222,128,.2), rgba(242,181,104,.12));
       box-shadow: 0 0 0 12px rgba(74,222,128,.04), 0 0 54px rgba(74,222,128,.24);
-      animation: splashMarkPulse 1.8s ease-in-out infinite;
+      animation: splashMarkPulse 1.5s ease-in-out infinite;
     }
 
     .splash-mark svg { width: 48px; height: 48px; }
@@ -284,11 +289,11 @@
       height: 100%;
       background: linear-gradient(90deg, #4ADE80, #FEF08A, #4ADE80);
       transform-origin: left;
-      animation: splashProgress 1.5s var(--smooth) both;
+      animation: splashProgress .9s var(--smooth) both;
     }
 
     .site-splash.is-leaving {
-      animation: splashLeave 700ms var(--smooth) both;
+      animation: splashLeave 460ms var(--smooth) both;
       pointer-events: none;
     }
 
@@ -330,6 +335,27 @@
       .splash-progress span,
       .site-splash::after {
         animation-duration: 1ms;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .site-splash::after {
+        opacity: 0.12;
+      }
+
+      .splash-mark {
+        width: 78px;
+        height: 78px;
+        margin-bottom: 22px;
+      }
+
+      .splash-mark svg {
+        width: 40px;
+        height: 40px;
+      }
+
+      .splash-subtitle {
+        font-size: 0.76rem;
       }
     }
 

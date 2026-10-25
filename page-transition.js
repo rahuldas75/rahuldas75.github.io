@@ -22,8 +22,8 @@
     splashTimer = setTimeout(function () {
       document.documentElement.classList.remove('splash-active');
       splash.classList.add('is-leaving');
-      setTimeout(function () { splash.remove(); }, reducedMotion ? 1 : 700);
-    }, reducedMotion ? 1 : 1450);
+      setTimeout(function () { splash.remove(); }, reducedMotion ? 1 : 460);
+    }, reducedMotion ? 1 : 900);
   }
 
   function addLayer() {
@@ -53,7 +53,7 @@
     clearTimeout(transitionTimer);
     transitionTimer = setTimeout(function () {
       window.location.href = url;
-    }, reducedMotion ? 1 : 620);
+    }, reducedMotion ? 1 : 470);
   }
 
   function handleClick(event) {
