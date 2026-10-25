@@ -290,8 +290,9 @@
     }
 
     function frame(time) {
-      rafId = requestAnimationFrame(frame);
+      rafId = null;
       if (document.hidden) return;
+      rafId = requestAnimationFrame(frame);
       const mode = WEATHER_MODES[weatherIdx].key;
       ctx.clearRect(0, 0, W, H);
 
@@ -330,6 +331,14 @@
       if (!rafId) rafId = requestAnimationFrame(frame);
     }
 
+    function resumeParticles() {
+      if (!prefersReducedMotion && !document.hidden && !rafId) {
+        rafId = requestAnimationFrame(frame);
+      }
+    }
+
+    document.addEventListener('visibilitychange', resumeParticles);
+
     let resizeTimer;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimer);
@@ -362,7 +371,11 @@
       try { saved = parseInt(localStorage.getItem('rd-weather'), 10) || 0; } catch (e) {}
       applyWeather(saved, true);
 
-      startParticles();
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(startParticles, { timeout: 1200 });
+      } else {
+        setTimeout(startParticles, 500);
+      }
       const sweep = $('#pageLightSweep');
       sweep.classList.add('active');
       setTimeout(() => sweep.classList.remove('active'), 450);

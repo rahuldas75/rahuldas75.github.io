@@ -438,6 +438,11 @@
       min-height: 100vh;
     }
 
+    .page-shell > main > section {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 420px;
+    }
+
     .top-navbar {
       display: flex;
       align-items: center;
@@ -1354,6 +1359,7 @@
       .liquid-glass { backdrop-filter: blur(14px) saturate(160%); -webkit-backdrop-filter: blur(14px) saturate(160%); }
       .god-rays { filter: blur(14px); }
       .ambient-bloom { filter: blur(46px); }
+      .page-shell > main > section { contain-intrinsic-size: auto 520px; }
       .toast-notification { bottom: calc(90px + env(safe-area-inset-bottom)); }
       .hero-intro-box { max-width: none; padding: 6px 2px; }
       .large-phone-mockup { width: min(216px, 68vw); height: auto; min-height: 320px; gap: 12px; }
