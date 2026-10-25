@@ -69,7 +69,6 @@
     document.addEventListener('click', handleClick);
     window.addEventListener('pageshow', function () {
       clearTimeout(transitionTimer);
-      clearTimeout(splashTimer);
       document.documentElement.classList.remove('is-page-transitioning');
       document.documentElement.classList.remove('is-transitioning');
     });
