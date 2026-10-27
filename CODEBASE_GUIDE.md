@@ -70,6 +70,7 @@ All paths are relative so the site remains compatible with static hosting and lo
 - `.footer__legal` is the small shared legal-link row. Legal links intentionally bypass the page-transition animation.
 - Section background images are passed through `--section-image` and rendered by section pseudo-elements.
 - `[data-audio-toggle]` is the opt-in ambient-audio control. It creates the FLAC player only after a click, persists the user preference and position between page navigations, and remains off and unloaded by default for new visitors.
+- Matsya and Kurma use two full-strength duplicate pseudo-element renders because their bundled source files contain lower alpha than `vishnu-main`; this restores comparable visual density while retaining transparent edges.
 
 ## Execution flow
 

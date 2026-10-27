@@ -231,6 +231,68 @@ body {
   }
 }
 
+@media (min-width: 761px) {
+  body.homepage-scene #featured-app > .section-header-row,
+  body.homepage-scene #selected-projects > .section-header-row {
+    display: block !important;
+    min-height: 230px;
+    padding-right: clamp(18rem, 27vw, 24rem);
+    margin-bottom: 3rem;
+  }
+  body.homepage-scene #featured-app > .section-header-row > .view-all-link,
+  body.homepage-scene #selected-projects > .section-header-row > .view-all-link {
+    display: block;
+    margin-top: 1.5rem;
+  }
+  body.homepage-scene #featured-app > .bg-matsya-spotlight,
+  body.homepage-scene #selected-projects > .bg-kurma-spotlight {
+    position: absolute !important;
+    inset: auto 0 auto auto !important;
+    width: clamp(180px, 22vw, 300px);
+    height: 190px;
+    max-width: none;
+    margin: 0;
+    z-index: 1;
+  }
+}
+
+@media (min-width: 761px) {
+  body.homepage-scene #featured-app,
+  body.homepage-scene #selected-projects {
+    display: block !important;
+  }
+  body.homepage-scene #featured-app > .section-header-row,
+  body.homepage-scene #selected-projects > .section-header-row {
+    position: relative;
+    display: block;
+    min-height: 230px;
+    padding-right: clamp(18rem, 27vw, 24rem);
+    margin-bottom: 3rem;
+  }
+  body.homepage-scene #featured-app > .bg-matsya-spotlight,
+  body.homepage-scene #selected-projects > .bg-kurma-spotlight {
+    position: absolute !important;
+    inset: auto !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: clamp(180px, 22vw, 300px);
+    height: 190px;
+    max-width: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    z-index: 1;
+  }
+  body.homepage-scene #featured-app > .section-header-row > .view-all-link,
+  body.homepage-scene #selected-projects > .section-header-row > .view-all-link {
+    display: block;
+    margin-top: 1.5rem;
+  }
+  body.homepage-scene #featured-app > .featured-app-card,
+  body.homepage-scene #selected-projects > .projects-3-grid {
+    margin-top: 0;
+  }
+}
+
 /* Mobile navigation: keep the header compact while preserving every page link. */
 .nav-dropdown-mobile {
   display: none;
@@ -857,7 +919,15 @@ body.homepage-scene .bulletin-card {
   font-size: clamp(3rem, 6.2vw, 6.5rem) !important;
   line-height: .94 !important;
   max-width: 11ch !important;
+  min-height: 2.82em;
   margin-top: 0 !important;
+}
+.homepage-scene .hero-word-mask {
+  width: 11ch;
+  vertical-align: baseline;
+}
+.homepage-scene .hero-word {
+  white-space: nowrap;
 }
 .scene-page .page-view > .hero-veranda-grid {
   min-height: 100svh;
@@ -882,6 +952,10 @@ body.homepage-scene .bulletin-card {
     font-size: clamp(2.75rem, 12vw, 4.5rem) !important;
     line-height: .96 !important;
     max-width: 9ch !important;
+    min-height: 2.88em;
+  }
+  .homepage-scene .hero-word-mask {
+    width: 11ch;
   }
   .scene-page .hero-greeting {
     font-size: clamp(2.75rem, 11vw, 4.5rem) !important;
@@ -1322,10 +1396,10 @@ body.homepage-scene .bg-matsya-spotlight {
   left: auto !important;
 }
 body.homepage-scene .bg-kurma-spotlight {
-  top: auto !important;
-  right: auto !important;
-  bottom: 0 !important;
-  left: 0 !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: auto !important;
+  left: auto !important;
 }
 body.homepage-scene .section-wrap > .section-header-row,
 body.homepage-scene .section-wrap > .featured-app-card,
@@ -1356,10 +1430,10 @@ body.homepage-scene .section-wrap > .notice-board-grid {
   left: auto;
 }
 .homepage-scene .bg-kurma-spotlight {
-  top: auto;
-  right: auto;
-  bottom: 0;
-  left: 0;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: auto;
 }
 .homepage-scene .section-wrap > .section-header-row,
 .homepage-scene .section-wrap > .featured-app-card,
@@ -3950,6 +4024,31 @@ body[data-theme="night"] .theme-toggle {
 body[data-theme="night"] .theme-toggle__sun { opacity: 0; transform: scale(.5) rotate(35deg); }
 body[data-theme="night"] .theme-toggle__moon { opacity: 1; transform: scale(1) rotate(0); }
 
+@media (min-width: 761px) {
+  body.homepage-scene #featured-app > .section-header-row,
+  body.homepage-scene #selected-projects > .section-header-row {
+    display: block !important;
+    min-height: 230px !important;
+    padding-right: clamp(18rem, 27vw, 24rem) !important;
+    margin-bottom: 3rem !important;
+  }
+  body.homepage-scene #featured-app > .section-header-row > .view-all-link,
+  body.homepage-scene #selected-projects > .section-header-row > .view-all-link {
+    display: block !important;
+    margin-top: 1.5rem !important;
+  }
+  body.homepage-scene #featured-app > .bg-matsya-spotlight,
+  body.homepage-scene #selected-projects > .bg-kurma-spotlight {
+    position: absolute !important;
+    inset: auto 0 auto auto !important;
+    width: clamp(180px, 22vw, 300px) !important;
+    height: 190px !important;
+    max-width: none !important;
+    margin: 0 !important;
+    z-index: 1;
+  }
+}
+
 /* Keep the mobile header controls visually uniform and easy to tap. */
 @media (max-width: 760px) {
   .header-nav-bar .nav-dropdown-mobile,
@@ -3973,4 +4072,189 @@ body[data-theme="night"] .theme-toggle__moon { opacity: 1; transform: scale(1) r
     width: 21px;
     height: 21px;
   }
+  .homepage-scene .bg-matsya-spotlight,
+  .homepage-scene .bg-kurma-spotlight {
+    width: clamp(180px, 38vw, 260px);
+    max-width: 42%;
+  }
+  .homepage-scene .bg-matsya-spotlight,
+  .homepage-scene .bg-kurma-spotlight {
+    top: 0 !important;
+    right: 0 !important;
+    bottom: auto !important;
+    left: auto !important;
+  }
+  .homepage-scene .section-wrap {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 760px) {
+  body.homepage-scene #featured-app > .section-header-row,
+  body.homepage-scene #selected-projects > .section-header-row {
+    position: relative !important;
+    display: block !important;
+    min-height: 170px !important;
+    padding-right: clamp(8rem, 34vw, 11rem) !important;
+    margin-bottom: 2rem !important;
+  }
+  body.homepage-scene #featured-app > .section-header-row > .view-all-link,
+  body.homepage-scene #selected-projects > .section-header-row > .view-all-link {
+    display: block !important;
+    width: max-content !important;
+    max-width: 100% !important;
+    margin-top: 1.25rem !important;
+  }
+  body.homepage-scene #featured-app > .bg-matsya-spotlight,
+  body.homepage-scene #selected-projects > .bg-kurma-spotlight {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: auto !important;
+    left: auto !important;
+    width: clamp(140px, 38vw, 210px) !important;
+    height: 145px !important;
+    max-width: none !important;
+    margin: 0 !important;
+    z-index: 1;
+  }
+}
+
+/*
+ * Avatar tuning controls.
+ * Adjust these values only; desktop and mobile are intentionally independent.
+ */
+:root {
+  --matsya-desktop-top: 0px;
+  --matsya-desktop-right: 0px;
+  --kurma-desktop-top: 0px;
+  --kurma-desktop-right: 0px;
+  --matsya-mobile-top: 0px;
+  --matsya-mobile-right: 0px;
+  --kurma-mobile-top: 0px;
+  --kurma-mobile-right: 0px;
+}
+
+body.homepage-scene #featured-app > .bg-matsya-spotlight,
+body.homepage-scene #selected-projects > .bg-kurma-spotlight {
+  opacity: 1 !important;
+  filter: drop-shadow(0 28px 50px rgba(20, 23, 26, .18)) !important;
+  mix-blend-mode: normal;
+}
+body.homepage-scene #featured-app > .bg-matsya-spotlight img,
+body.homepage-scene #selected-projects > .bg-kurma-spotlight img {
+  opacity: 1 !important;
+  filter: drop-shadow(0 20px 40px rgba(20, 23, 26, .12)) !important;
+}
+body.homepage-scene #featured-app > .bg-matsya-spotlight::after,
+body.homepage-scene #selected-projects > .bg-kurma-spotlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  opacity: 1;
+  pointer-events: none;
+}
+body.homepage-scene #featured-app > .bg-matsya-spotlight::after {
+  background-image:
+    image-set(
+      url("assets/hero-assets/matsya-avatar.webp") type("image/webp"),
+      url("assets/hero-assets/matsya-avatar.png") type("image/png")
+    ),
+    image-set(
+      url("assets/hero-assets/matsya-avatar.webp") type("image/webp"),
+      url("assets/hero-assets/matsya-avatar.png") type("image/png")
+    );
+}
+body.homepage-scene #selected-projects > .bg-kurma-spotlight::after {
+  background-image:
+    image-set(
+      url("assets/hero-assets/kurma-avatar.webp") type("image/webp"),
+      url("assets/hero-assets/kurma-avatar.png") type("image/png")
+    ),
+    image-set(
+      url("assets/hero-assets/kurma-avatar.webp") type("image/webp"),
+      url("assets/hero-assets/kurma-avatar.png") type("image/png")
+    );
+}
+
+@media (min-width: 761px) {
+  body.homepage-scene #featured-app > .bg-matsya-spotlight {
+    top: var(--matsya-desktop-top) !important;
+    right: var(--matsya-desktop-right) !important;
+  }
+  body.homepage-scene #selected-projects > .bg-kurma-spotlight {
+    top: var(--kurma-desktop-top) !important;
+    right: var(--kurma-desktop-right) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.homepage-scene #featured-app > .bg-matsya-spotlight {
+    top: var(--matsya-mobile-top) !important;
+    right: var(--matsya-mobile-right) !important;
+  }
+  body.homepage-scene #selected-projects > .bg-kurma-spotlight {
+    top: var(--kurma-mobile-top) !important;
+    right: var(--kurma-mobile-right) !important;
+  }
+}
+
+
+/* ==========================================================================
+   MATSYA & KURMA ARTWORK CLARITY & OPACITY FIX
+   ========================================================================== */
+body.homepage-scene #featured-app > .bg-matsya-spotlight,
+body.homepage-scene #selected-projects > .bg-kurma-spotlight {
+  position: absolute !important;
+  z-index: 2 !important; /* Forces artwork ABOVE the section's dark ::after veil */
+  opacity: 1 !important;
+  pointer-events: none;
+  mix-blend-mode: normal !important;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.45)) !important;
+}
+
+body.homepage-scene #featured-app > .bg-matsya-spotlight img,
+body.homepage-scene #selected-projects > .bg-kurma-spotlight img {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 1 !important;
+  filter: saturate(1.1) contrast(1.05) !important; /* Restores vibrance and contrast */
+}
+
+/* 
+ * Multi-layer composite compensation:
+ * Fills in the translucent alpha pixels baked into the source image,
+ * ensuring the fish and turtle render solid and vibrant instead of see-through.
+ */
+body.homepage-scene #featured-app > .bg-matsya-spotlight::after,
+body.homepage-scene #selected-projects > .bg-kurma-spotlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+body.homepage-scene #featured-app > .bg-matsya-spotlight::after {
+  background-image: image-set(
+    url("assets/hero-assets/matsya-avatar.webp") type("image/webp"),
+    url("assets/hero-assets/matsya-avatar.png") type("image/png")
+  );
+}
+
+body.homepage-scene #selected-projects > .bg-kurma-spotlight::after {
+  background-image: image-set(
+    url("assets/hero-assets/kurma-avatar.webp") type("image/webp"),
+    url("assets/hero-assets/kurma-avatar.png") type("image/png")
+  );
 }

@@ -19,6 +19,18 @@
 - Updated the privacy disclosure to describe the actual local-storage behavior and to avoid claiming that analytics are present when none are configured.
 - Standardized mobile header controls as matching 42px rounded squares and enlarged hero social buttons and icons.
 - Added device color-scheme detection as the initial theme fallback while preserving explicit saved theme choices.
+- Stabilized the rotating hero title with a reserved word width and minimum title height, preventing nearby content from shifting as words change.
+- Repositioned Kurma into the upper-right of its own projects section, matching the contained Matsya treatment, with smaller capped artwork on mobile.
+- Added a final scoped Kurma override so legacy cascade rules cannot move it back to the bottom-left.
+- On desktop only, moved Matsya and Kurma below their respective section headings while preserving the existing mobile placement.
+- Reserved a normal-flow desktop artwork lane between each heading and its content card so the avatars cannot reduce heading or card readability through overlap.
+- Desktop section headers now place each view-all link below its heading on the left, while the corresponding avatar stays contained at the upper-right; mobile positioning is unchanged.
+- Applied the same readable mobile section-header structure: view-all links stack below headings on the left, with Matsya and Kurma reserved at the upper-right.
+- Added a final avatar tuning block with separate desktop/mobile position variables, forced full opacity on the wrapper and image, and restored contrast/saturation for clearer artwork.
+- Matched Matsya and Kurma to Vishnu's visual rendering treatment: full opacity, normal blending, and the same wrapper/image drop shadows without desaturation or contrast boosting.
+- Compensated for the lower alpha baked into the Matsya and Kurma source artwork by adding a controlled second render layer, making their visible density comparable to Vishnu-main without flattening transparent edges.
+- Increased the compensation to two full-strength duplicate background layers so translucent source pixels composite into solid, readable artwork instead of appearing faded into the section background.
+- Moved the Toolkit view-all link into its heading wrapper so it follows the same stacked heading/link structure as the other homepage sections.
 
 ### Performance and reliability
 
