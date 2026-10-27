@@ -16,7 +16,7 @@
   var audioEnabled = false;
   var audioPreferenceKey = 'rd-audio-enabled';
   var audioPositionKey = 'rd-audio-position';
-  var audioSource = 'assets/audio/active-audio.wav';
+  var audioSource = 'assets/audio/narayana-ost-type.wav';
 
   // Storage can be unavailable in privacy-restricted browser contexts.
   try { savedTheme = localStorage.getItem('rd-theme') || ''; } catch (e) {}
