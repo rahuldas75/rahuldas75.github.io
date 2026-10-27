@@ -3,66 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#050C14">
   <meta name="description" content="The page you requested could not be found.">
   <title>404 — Rahul D</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script src="page-transition.js" defer></script>
 </head>
-<body data-weather="night">
-  <div class="site-splash" role="status" aria-label="Loading Rahul D portfolio">
-    <div class="splash-core">
-      <div class="splash-mark" aria-hidden="true">
-        <svg viewBox="0 0 48 48" fill="none" stroke="#4ADE80" stroke-width="2"><path d="M6 39h36L28 11l-8 14-5-7L6 39Z" /><circle cx="35" cy="11" r="3" /></svg>
-      </div>
-      <div class="splash-kicker">Portfolio system / 2026</div>
-      <div class="splash-title">Rahul D</div>
-      <div class="splash-subtitle">BUILD • CREATE • EXPLORE</div>
-      <div class="splash-progress" aria-hidden="true"><span></span></div>
-    </div>
-  </div>
+<body class="scene-page"><div class="static-texture" aria-hidden="true"></div>
   <div class="page-shell">
-    <header class="liquid-glass top-navbar">
-      <a href="index.html" class="brand-identity">
-        <div class="mountain-emblem" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2">
-            <path d="M3 20h18L14 6l-4 7-3-4-4 11z" />
-            <circle cx="18" cy="6" r="2" />
-          </svg>
+    <header class="header">
+      <div class="header__wrapper">
+        <a href="index.html" class="brand"><span class="brand-name">Rahul D</span><span class="brand-dot" aria-hidden="true"></span></a>
+        <div class="header-nav-bar"><nav id="primary-nav" aria-label="Primary Navigation"><ul class="nav-links">
+          <li class="nav-item"><a href="index.html">Overview</a></li>
+          <li class="nav-item"><a href="apps.html">Apps</a></li>
+          <li class="nav-item"><a href="projects.html">Projects</a></li>
+          <li class="nav-item"><a href="about.html">About</a></li>
+        </ul></nav>
+        <button class="nav-dropdown-mobile" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-nav"><svg class="nav-dropdown-mobile__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path class="hamburger-line hamburger-line--top" d="M4 12H20"></path><path class="hamburger-line hamburger-line--bottom" d="M4 12H20"></path></svg></button>
+        <a href="mailto:contact@rahuld.dev" class="contact-postcard-cta">Connect <span class="cta-kanji" aria-hidden="true">दर्श</span></a>
+        <button class="audio-toggle" data-audio-toggle type="button" aria-label="Turn ambient audio on" aria-pressed="false" title="Ambient audio off"><svg class="audio-toggle__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4 10V14H7L11 18V6L7 10H4Z" fill="currentColor"></path><path class="audio-toggle__wave audio-toggle__wave--near" d="M14 9.5C15.2 10.7 15.2 13.3 14 14.5"></path><path class="audio-toggle__wave audio-toggle__wave--far" d="M16.5 7C19.2 9.7 19.2 14.3 16.5 17"></path></svg></button><button class="theme-toggle" data-theme-toggle aria-label="Switch to night mode" aria-pressed="false" title="Night mode"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><g class="theme-toggle__sun" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="3.5" fill="currentColor" stroke="none"></circle><path d="M12 2.5V5M12 19V21.5M2.5 12H5M19 12H21.5M5.28 5.28L7.05 7.05M16.95 16.95L18.72 18.72M18.72 5.28L16.95 7.05M7.05 16.95L5.28 18.72"></path></g><path class="theme-toggle__moon" d="M19.2 14.7A7.8 7.8 0 0 1 9.3 4.8 8.5 8.5 0 1 0 19.2 14.7Z" fill="currentColor"></path></svg></button>
         </div>
-        <div class="brand-text">
-          <h2>Rahul D</h2>
-          <span>Build • Create • Explore</span>
-        </div>
-      </a>
-      <nav aria-label="Primary Navigation">
-        <ul class="nav-pill-group">
-          <li><a href="index.html" class="nav-pill">Home</a></li>
-          <li><a href="app/" class="nav-pill">Apps</a></li>
-          <li><a href="projects/" class="nav-pill">Projects</a></li>
-          <li><a href="about/" class="nav-pill">About</a></li>
-        </ul>
-      </nav>
+      </div>
     </header>
 
-    <main class="page-view active-page" id="page-not-found">
-      <section class="hero-veranda-grid">
+    <main class="page-view" id="page-not-found">
+      <section class="hero-veranda-grid" style="--section-image: image-set(url('assets/bg/bg1.webp') type('image/webp'), url('assets/bg/bg1.png') type('image/png'))">
         <div class="hero-intro-box">
-          <div class="status-badge">
-            <span class="status-dot"></span>
-            <span>404 • SIGNAL LOST</span>
-          </div>
           <h1 class="hero-greeting">This path wandered off <span>🌙</span></h1>
           <p class="hero-bio-text">
             The page you requested does not exist, may have moved, or was typed incorrectly.
           </p>
           <div class="featured-app-actions" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;">
             <a href="index.html" class="pill-cta-btn">Return Home <span>→</span></a>
-            <a href="projects/" class="pill-cta-btn">Browse Projects <span>↗</span></a>
+            <a href="projects.html" class="pill-cta-btn">Browse Projects <span>↗</span></a>
           </div>
         </div>
 
@@ -76,18 +49,16 @@
           </p>
           <div class="tech-pill-cloud" style="margin-top:16px;">
             <a href="index.html" class="tech-pill">Home</a>
-            <a href="app/" class="tech-pill">Apps</a>
-            <a href="projects/" class="tech-pill">Projects</a>
-            <a href="about/" class="tech-pill">About</a>
+            <a href="apps.html" class="tech-pill">Apps</a>
+            <a href="projects.html" class="tech-pill">Projects</a>
+            <a href="about.html" class="tech-pill">About</a>
           </div>
         </article>
       </section>
     </main>
 
-    <footer class="liquid-glass woodland-footer">
-      <span>© <span id="footerYear">2026</span> Rahul D • Built in Guwahati 🍃</span>
-      <span style="color:var(--sage);">Build • Create • Explore</span>
-    </footer>
+    <footer class="footer"><div class="footer__art" aria-hidden="true"><img class="footer__image" src="assets/footer-assets/ghy-map-light.png" data-light-src="assets/footer-assets/ghy-map-light.png" data-dark-src="assets/footer-assets/ghy-map-dark.png" width="1200" height="800" alt="" loading="lazy" decoding="async"></div><div class="footer__content"><div class="footer__text"><p class="footer__eyebrow">A quiet place to begin</p><a href="mailto:contact@rahuld.dev" class="footer__text-link" aria-label="Let's talk"><h2 class="footer__headline">Still thinking about a better build? <em>let's talk.</em></h2></a></div><nav class="navigation" aria-label="Pages"><h3 class="navigation__title">Pages</h3><ul class="navigation__group"><li><a href="index.html">Overview</a></li><li><a href="apps.html">Apps</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li></ul></nav><nav class="navigation" aria-label="Explore"><h3 class="navigation__title">Explore</h3><ul class="navigation__group"><li><a href="index.html#featured-app">Featured app</a></li><li><a href="index.html#selected-projects">Selected work</a></li><li><a href="index.html#toolkit">Toolkit</a></li></ul></nav><div class="navigation"><h3 class="navigation__title">Contact</h3><address class="navigation__group"><a href="mailto:contact@rahuld.dev">contact@rahuld.dev</a><a href="https://github.com/rahuldas75" target="_blank" rel="noopener noreferrer">GitHub</a></address></div>    </div><div class="footer__legal" aria-label="Legal"><span>© 2026 Rahul D</span><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms of Service</a><a href="THIRD-PARTY-LICENSES.md">Licenses</a></div></footer>
   </div>
+  <script src="site.js"></script>
 </body>
 </html>

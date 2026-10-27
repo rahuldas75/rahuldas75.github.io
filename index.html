@@ -1,540 +1,536 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#EFE6CF" />
-  <meta name="description" content="Rahul D — Developer, Gamer, Dreamer. Android & Flutter developer from Guwahati building calm, human software and AI workflows." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rahul D — Build • Create • Explore</title>
+  <meta name="description" content="Overview portfolio of Rahul D — Android & Flutter developer from Guwahati crafting calm, human software, AI workflows, and digital tools." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="preload" href="style.css" as="style">
+  <!-- Fonts and all visual tokens are maintained in the shared stylesheet. -->
   <link rel="stylesheet" href="style.css" />
-  <script src="page-transition.js" defer></script>
-</head>
-<body data-weather="sunny">
-  <script>try{var i=parseInt(localStorage.getItem('rd-weather'),10);document.body.dataset.weather=['sunny','rain','night'][i]||'sunny'}catch(e){}</script>
 
-  <div class="site-splash" role="status" aria-label="Loading Rahul D portfolio">
-    <div class="splash-core">
-      <div class="splash-mark" aria-hidden="true">
-        <svg viewBox="0 0 48 48" fill="none" stroke="#4ADE80" stroke-width="2">
-          <path d="M6 39h36L28 11l-8 14-5-7L6 39Z" />
-          <circle cx="35" cy="11" r="3" />
-        </svg>
-      </div>
-      <div class="splash-kicker">Portfolio system / 2026</div>
-      <div class="splash-title">Rahul D</div>
-      <div class="splash-subtitle">BUILD • CREATE • EXPLORE</div>
-      <div class="splash-progress" aria-hidden="true"><span></span></div>
+</head>
+<body class="homepage-scene">
+
+  <!-- Shared animated grain texture. Replace assets/grain.gif in one place to update it site-wide. -->
+  <!-- Static Texture -->
+  <div class="static-texture" aria-hidden="true"></div>
+
+  <!-- Custom Cursor -->
+  <div id="customCursor" aria-hidden="true"></div>
+
+  <!-- Scroll Progress -->
+  <div id="scrollbar-container" aria-hidden="true">
+    <div id="scrollbar-thumb"></div>
+  </div>
+
+  <!-- Toast Feedback -->
+  <div class="toast-feedback" id="toastNotification">Email copied to clipboard 🪶</div>
+
+  <!-- ==========================================================================
+       MORE & BIGGER PEACOCK FEATHERS (DUAL-DRIFT LAYERS)
+       ========================================================================== -->
+  <div class="petals-layer" aria-hidden="true">
+    <!-- Feather 1 -->
+    <div class="feather-item" style="left: 4%; --duration: 21s; --delay: -2s; --drift: 60px; --size: 48px;">
+      <img src="assets/hero-assets/peacock-feather.png" class="feather-sprite" alt="" onerror="this.src='data:image/svg+xml,%3Csvg viewBox=\'0 0 30 30\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cellipse cx=\'15\' cy=\'15\' rx=\'6\' ry=\'14\' fill=\'%23c59b27\' opacity=\'0.75\'/%3E%3C/svg%3E'" />
+    </div>
+    <!-- Feather 2 -->
+    <div class="feather-item" style="left: 14%; --duration: 24s; --delay: -8s; --drift: -50px; --size: 42px;">
+      <img src="assets/hero-assets/peacock-feather.png" class="feather-sprite" alt="" onerror="this.src='data:image/svg+xml,%3Csvg viewBox=\'0 0 30 30\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cellipse cx=\'15\' cy=\'15\' rx=\'6\' ry=\'14\' fill=\'%23c59b27\' opacity=\'0.75\'/%3E%3C/svg%3E'" />
+    </div>
+    <!-- Feather 3 -->
+    <div class="feather-item" style="left: 25%; --duration: 26s; --delay: -14s; --drift: 65px; --size: 52px;">
+      <img src="assets/hero-assets/peacock-feather.png" class="feather-sprite" alt="" onerror="this.src='data:image/svg+xml,%3Csvg viewBox=\'0 0 30 30\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cellipse cx=\'15\' cy=\'15\' rx=\'6\' ry=\'14\' fill=\'%23c59b27\' opacity=\'0.75\'/%3E%3C/svg%3E'" />
+    </div>
+    <!-- Feather 4 -->
+    <div class="feather-item" style="left: 36%; --duration: 23s; --delay: -4s; --drift: -45px; --size: 44px;">
+      <img src="assets/hero-assets/peacock-feather.png" class="feather-sprite" alt="" onerror="this.src='data:image/svg+xml,%3Csvg viewBox=\'0 0 30 30\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cellipse cx=\'15\' cy=\'15\' rx=\'6\' ry=\'14\' fill=\'%23c59b27\' opacity=\'0.75\'/%3E%3C/svg%3E'" />
+    </div>
+    <!-- Feather 5 -->
+    <div class="feather-item" style="left: 48%; --duration: 27s; --delay: -17s; --drift: 70px; --size: 56px;">
+      <img src="assets/hero-assets/peacock-feather.png" class="feather-sprite" alt="" onerror="this.src='data:image/svg+xml,%3Csvg viewBox=\'0 0 30 30\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cellipse cx=\'15\' cy=\'15\' rx=\'6\' ry=\'14\' fill=\'%23c59b27\' opacity=\'0.75\'/%3E%3C/svg%3E'" />
+    </div>
+    <!-- Feather 6 -->
+    <div class="feather-item" style="left: 59%; --duration: 22s; --delay: -9s; --drift: -55px; --size: 40px;">
+      <img src="assets/hero-assets/peacock-feather.png" class="feather-sprite" alt="" onerror="this.src='data:image/svg+xml,%3Csvg viewBox=\'0 0 30 30\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cellipse cx=\'15\' cy=\'15\' rx=\'6\' ry=\'14\' fill=\'%23c59b27\' opacity=\'0.75\'/%3E%3C/svg%3E'" />
+    </div>
+    <!-- Feather 7 -->
+    <div class="feather-item" style="left: 70%; --duration: 25s; --delay: -12s; --drift: 50px; --size: 48px;">
+      <img src="assets/hero-assets/peacock-feather.png" class="feather-sprite" alt="" onerror="this.src='data:image/svg+xml,%3Csvg viewBox=\'0 0 30 30\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cellipse cx=\'15\' cy=\'15\' rx=\'6\' ry=\'14\' fill=\'%23c59b27\' opacity=\'0.75\'/%3E%3C/svg%3E'" />
+    </div>
+    <!-- Feather 8 -->
+    <div class="feather-item" style="left: 81%; --duration: 28s; --delay: -19s; --drift: -60px; --size: 54px;">
+      <img src="assets/hero-assets/peacock-feather.png" class="feather-sprite" alt="" onerror="this.src='data:image/svg+xml,%3Csvg viewBox=\'0 0 30 30\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cellipse cx=\'15\' cy=\'15\' rx=\'6\' ry=\'14\' fill=\'%23c59b27\' opacity=\'0.75\'/%3E%3C/svg%3E'" />
+    </div>
+    <!-- Feather 9 -->
+    <div class="feather-item" style="left: 92%; --duration: 20s; --delay: -6s; --drift: 45px; --size: 44px;">
+      <img src="assets/hero-assets/peacock-feather.png" class="feather-sprite" alt="" onerror="this.src='data:image/svg+xml,%3Csvg viewBox=\'0 0 30 30\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cellipse cx=\'15\' cy=\'15\' rx=\'6\' ry=\'14\' fill=\'%23c59b27\' opacity=\'0.75\'/%3E%3C/svg%3E'" />
     </div>
   </div>
 
-  <!-- Watercolor Paper Texture -->
-  <div class="watercolor-grain" aria-hidden="true"></div>
-
-  <!-- Optical Page Transition Light Sweep -->
-  <div class="page-light-sweep" id="pageLightSweep" aria-hidden="true"></div>
-
-  <!-- Copy / Action Feedback Toast -->
-  <div class="toast-notification" id="toastNotification" role="status" aria-live="polite"></div>
-
-  <!-- ==========================================================================
-       BACKGROUND LAYER: FULL-BLEED WOODLAND VERANDA & RIVER VALLEY
-       ========================================================================== -->
-  <div class="world-stage" aria-hidden="true">
-    <!-- Desktop Landscape SVG -->
-    <svg class="world-svg desktop-world-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="skyGradient" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="var(--sky-top)" />
-          <stop offset="55%" stop-color="var(--sky-mid)" />
-          <stop offset="100%" stop-color="var(--sky-horizon)" />
-        </linearGradient>
-        <linearGradient id="riverGrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stop-color="#38BDF8" />
-          <stop offset="45%" stop-color="#0284C7" />
-          <stop offset="100%" stop-color="#0F766E" />
-        </linearGradient>
-        <radialGradient id="amberGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#FDE047" stop-opacity="0.95" />
-          <stop offset="45%" stop-color="#F2B568" stop-opacity="0.45" />
-          <stop offset="100%" stop-color="#F2B568" stop-opacity="0" />
-        </radialGradient>
-        <radialGradient id="sunHalo" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#FEF08A" stop-opacity="0.95" />
-          <stop offset="40%" stop-color="#FDE047" stop-opacity="0.35" />
-          <stop offset="100%" stop-color="#FDE047" stop-opacity="0" />
-        </radialGradient>
-      </defs>
-
-      <!-- 1. SKY & CELESTIAL BODIES -->
-      <rect width="1440" height="900" fill="url(#skyGradient)" />
-
-      <!-- Sunny Mode: Sun Corona & Gliding Birds -->
-      <g class="celestial-sun">
-        <circle class="anim-halo" cx="840" cy="145" r="115" fill="url(#sunHalo)" />
-        <circle cx="840" cy="145" r="36" fill="#FEF9C3" />
-        <g class="anim-birds" stroke="#1E3A5F" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.65">
-          <path d="M 420 210 Q 428 202 435 210 Q 442 202 450 210" />
-          <path d="M 455 196 Q 461 190 467 196 Q 473 190 479 196" />
-          <path d="M 438 225 Q 444 219 450 225 Q 456 219 462 225" />
-        </g>
-      </g>
-
-      <!-- Night Mode: Crescent Moon, Constellation Stars & Shooting Star -->
-      <g class="celestial-moon">
-        <g fill="#FEF9C3">
-          <circle class="anim-star-1" cx="390" cy="88" r="2.2" />
-          <circle class="anim-star-2" cx="520" cy="128" r="1.8" />
-          <circle class="anim-star-3" cx="680" cy="74" r="2.5" />
-          <circle class="anim-star-1" cx="790" cy="140" r="1.6" />
-          <circle class="anim-star-2" cx="960" cy="82" r="2.4" />
-          <circle class="anim-star-3" cx="1090" cy="130" r="1.9" />
-          <circle class="anim-star-1" cx="610" cy="180" r="1.7" />
-        </g>
-        <line class="anim-meteor" x1="980" y1="70" x2="1045" y2="42" stroke="#FEF9C3" stroke-width="2.2" stroke-linecap="round" />
-        <circle class="anim-halo" cx="880" cy="135" r="78" fill="url(#sunHalo)" opacity="0.55" />
-        <path d="M 868 98 A 38 38 0 1 0 908 156 A 30 30 0 1 1 868 98 Z" fill="#FEF9C3" />
-      </g>
-
-      <g class="anim-cloud-slow" opacity="0.88" fill="#FFFFFF">
-        <circle cx="580" cy="150" r="48" />
-        <circle cx="635" cy="140" r="62" />
-        <circle cx="700" cy="148" r="52" />
-        <circle cx="755" cy="160" r="38" />
-        <rect x="560" y="150" width="210" height="45" rx="22" />
-      </g>
-      <g class="anim-cloud-med" opacity="0.72" fill="#FFFBEB">
-        <circle cx="980" cy="115" r="36" />
-        <circle cx="1025" cy="105" r="48" />
-        <circle cx="1075" cy="118" r="34" />
-      </g>
-
-      <!-- 2. DISTANT BLUE-GREEN MOUNTAINS & MIST -->
-      <path d="M 0 430 L 190 270 L 350 365 L 540 210 L 740 350 L 940 225 L 1160 360 L 1350 250 L 1440 320 L 1440 550 L 0 550 Z" fill="#3B6E6C" opacity="0.55" />
-      <path d="M 0 460 L 140 340 L 310 420 L 490 295 L 690 410 L 890 310 L 1120 420 L 1440 340 L 1440 580 L 0 580 Z" fill="#285948" opacity="0.8" />
-      <g class="valley-mist anim-mist" fill="#E2E8F0">
-        <rect x="180" y="385" width="460" height="22" rx="11" opacity="0.28" />
-        <rect x="680" y="360" width="520" height="18" rx="9" opacity="0.22" />
-      </g>
-
-      <!-- 3. LUSH GREEN VALLEY HILLS -->
-      <path d="M 0 480 Q 320 410 650 475 T 1440 450 L 1440 700 L 0 700 Z" fill="#234F3C" />
-      <g transform="translate(610, 442)">
-        <path d="M 0 30 Q 65 5 130 30 L 130 46 L 0 46 Z" fill="#94A3B8" />
-        <circle cx="35" cy="44" r="14" fill="#1E293B" />
-        <circle cx="68" cy="44" r="16" fill="#1E293B" />
-        <circle cx="100" cy="44" r="14" fill="#1E293B" />
-      </g>
-
-      <!-- 4. WINDING EMERALD-BLUE RIVER -->
-      <path d="M 650 475 C 580 515 430 535 350 585 C 260 640 180 730 120 900 L 1180 900 C 1060 720 920 620 820 555 C 745 505 710 490 650 475 Z" fill="url(#riverGrad)" />
-      <g class="anim-water" stroke="#E0F2FE" stroke-width="2.5" stroke-linecap="round">
-        <line x1="590" y1="510" x2="660" y2="510" />
-        <line x1="520" y1="545" x2="630" y2="545" />
-        <line x1="460" y1="585" x2="590" y2="585" />
-        <line x1="540" y1="625" x2="710" y2="625" />
-        <line x1="420" y1="675" x2="640" y2="675" />
-      </g>
-
-      <!-- 5. COTTAGE VERANDA WOODEN DECK & HEARTH -->
-      <g fill="#5C3A21" stroke="#3A2210" stroke-width="2">
-        <rect x="280" y="540" width="14" height="95" rx="3" />
-        <rect x="460" y="555" width="14" height="90" rx="3" />
-        <rect x="640" y="565" width="14" height="90" rx="3" />
-        <rect x="240" y="555" width="520" height="12" rx="4" transform="rotate(2.5 240 555)" />
-        <rect x="920" y="535" width="220" height="16" rx="4" fill="#6E472B" />
-        <rect x="950" y="551" width="18" height="85" />
-        <rect x="1090" y="551" width="18" height="85" />
-      </g>
-      <rect x="0" y="100" width="90" height="800" fill="#3D2616" />
-      <rect x="85" y="130" width="18" height="600" fill="#52341E" />
-
-      <g class="anim-lantern">
-        <line x1="115" y1="145" x2="115" y2="195" stroke="#27170C" stroke-width="3" />
-        <circle class="anim-halo" cx="115" cy="222" r="72" fill="url(#amberGlow)" />
-        <polygon points="98,195 132,195 126,242 104,242" fill="#FDE047" stroke="#422006" stroke-width="3" />
-        <path d="M 92 195 L 138 195 L 125 182 L 105 182 Z" fill="#27170C" />
-      </g>
-
-      <g>
-        <circle class="anim-halo" cx="95" cy="555" r="92" fill="url(#amberGlow)" />
-        <g class="anim-fire">
-          <path d="M 72 575 Q 88 530 96 518 Q 106 532 118 575 Z" fill="#F97316" />
-          <path d="M 82 575 Q 95 542 97 532 Q 103 542 110 575 Z" fill="#FDE047" />
-        </g>
-        <ellipse cx="96" cy="548" rx="28" ry="20" fill="#1E293B" stroke="#475569" stroke-width="2.5" />
-        <rect x="64" y="532" width="64" height="6" rx="3" fill="#334155" />
-        <path class="anim-steam-1" d="M 88 525 Q 82 505 94 490 Q 104 475 92 458" stroke="#F5EBD5" stroke-width="2.5" fill="none" stroke-linecap="round" />
-        <path class="anim-steam-2" d="M 104 525 Q 112 505 100 490 Q 90 475 102 458" stroke="#F5EBD5" stroke-width="2" fill="none" stroke-linecap="round" />
-      </g>
-
-      <rect x="135" y="568" width="230" height="16" rx="5" fill="#7C5333" stroke="#432812" stroke-width="2" />
-      <rect x="315" y="550" width="16" height="18" rx="3" fill="#E2E8F0" />
-
-      <g class="anim-ginger-cat">
-        <ellipse cx="235" cy="556" rx="34" ry="20" fill="#EA580C" />
-        <ellipse cx="235" cy="562" rx="26" ry="11" fill="#FFEDD5" />
-        <circle cx="210" cy="556" r="16" fill="#EA580C" />
-        <polygon points="196,544 204,534 208,545" fill="#EA580C" />
-        <polygon points="214,545 220,534 225,545" fill="#EA580C" />
-      </g>
-
-      <g class="anim-sproutkin">
-        <circle cx="620" cy="548" r="16" fill="#607C4B" stroke="#A9BE92" stroke-width="1.5" />
-        <path d="M 614 533 C 608 515 595 520 606 535 Z" fill="#4ADE80" />
-        <path d="M 626 533 C 632 515 645 520 634 535 Z" fill="#4ADE80" />
-        <circle cx="615" cy="546" r="2.5" fill="#0B1F19" />
-        <circle cx="625" cy="546" r="2.5" fill="#0B1F19" />
-      </g>
-
-      <g>
-        <ellipse cx="1025" cy="508" rx="20" ry="28" fill="#1E293B" />
-        <ellipse cx="1018" cy="512" rx="12" ry="22" fill="#F8FAFC" />
-        <circle cx="1022" cy="474" r="14" fill="#1E293B" />
-        <polygon points="1010,464 1014,450 1022,462" fill="#1E293B" />
-        <polygon points="1024,462 1032,450 1035,464" fill="#1E293B" />
-        <path class="anim-cat-tail" d="M 1038 528 Q 1062 518 1058 495" stroke="#1E293B" stroke-width="7" stroke-linecap="round" fill="none" />
-      </g>
-
-      <!-- 6. TOP OVERHANGING TREE CANOPY -->
-      <g class="anim-canopy">
-        <circle cx="120" cy="40" r="140" fill="#133829" />
-        <circle cx="310" cy="10" r="120" fill="#1E4E38" />
-        <circle cx="520" cy="-10" r="110" fill="#286646" opacity="0.9" />
-        <circle cx="1180" cy="20" r="130" fill="#133829" />
-        <circle cx="1360" cy="70" r="150" fill="#0F2D21" />
-      </g>
-    </svg>
-
-    <!-- Mobile Portrait SVG Scene -->
-    <svg class="world-svg mobile-world-svg" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="mobileSky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="var(--sky-top)"/><stop offset="58%" stop-color="var(--sky-mid)"/><stop offset="100%" stop-color="var(--sky-horizon)"/>
-        </linearGradient>
-        <linearGradient id="mobileRiver" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stop-color="#83D2D0"/><stop offset="55%" stop-color="#2E8E91"/><stop offset="100%" stop-color="#185C57"/>
-        </linearGradient>
-        <radialGradient id="mobileGlow"><stop offset="0%" stop-color="#FDE68A" stop-opacity=".85"/><stop offset="100%" stop-color="#F2B568" stop-opacity="0"/></radialGradient>
-      </defs>
-      <rect width="390" height="844" fill="#18382B"/>
-      <rect width="390" height="844" fill="url(#mobileSky)" opacity=".12"/>
-      <path d="M0 0H390V150L365 170V545H25V170L0 150Z" fill="#254936"/>
-      <path d="M0 68L390 38M0 86L390 56" stroke="#42664A" stroke-width="12" opacity=".7"/>
-      <rect x="18" y="106" width="354" height="345" rx="12" fill="#533923" stroke="#8B6741" stroke-width="7"/>
-      <rect x="31" y="119" width="328" height="319" rx="4" fill="url(#mobileSky)"/>
-
-      <!-- Mobile Sun / Moon & Stars -->
-      <g class="celestial-sun">
-        <circle class="anim-halo" cx="275" cy="168" r="42" fill="url(#mobileGlow)"/>
-        <circle cx="275" cy="168" r="16" fill="#FEF9C3"/>
-      </g>
-      <g class="celestial-moon">
-        <circle class="anim-star-1" cx="95" cy="148" r="1.8" fill="#FEF9C3"/>
-        <circle class="anim-star-2" cx="165" cy="142" r="1.5" fill="#FEF9C3"/>
-        <circle class="anim-star-3" cx="220" cy="162" r="2.0" fill="#FEF9C3"/>
-        <path d="M 272 148 A 18 18 0 1 0 292 176 A 14 14 0 1 1 272 148 Z" fill="#FEF9C3"/>
-      </g>
-
-      <g class="anim-cloud-slow" fill="#FFF9DF" opacity=".7">
-        <ellipse cx="120" cy="166" rx="40" ry="15"/><ellipse cx="143" cy="159" rx="31" ry="19"/><ellipse cx="164" cy="170" rx="34" ry="13"/>
-      </g>
-      <path d="M31 286L92 205L129 253L184 182L247 264L299 210L359 270V438H31Z" fill="#537D75" opacity=".9"/>
-      <path d="M31 316Q90 277 147 308T256 298T359 305V438H31Z" fill="#316B4A"/>
-      <g class="valley-mist anim-mist" fill="#E2E8F0">
-        <rect x="55" y="295" width="220" height="12" rx="6" opacity=".28"/>
-      </g>
-      <path d="M31 354Q95 337 132 365T219 365T359 344V438H31Z" fill="#245B3E"/>
-      <path d="M116 349C151 358 182 367 184 390C186 409 157 422 137 438H304C281 410 254 390 238 375C213 352 179 348 160 342Z" fill="url(#mobileRiver)"/>
-      <g class="anim-water" stroke="#D9F8E9" stroke-width="2" stroke-linecap="round" opacity=".7"><path d="M180 379h22M202 398h35M164 418h48"/></g>
-      <g fill="#102D21" opacity=".95">
-        <path d="M31 119Q18 160 31 215Q38 176 53 153Q49 126 31 119Z"/><path d="M359 119Q378 158 359 221Q351 180 337 154Q341 130 359 119Z"/>
-        <circle cx="47" cy="130" r="35"/><circle cx="78" cy="112" r="27"/><circle cx="344" cy="125" r="38"/><circle cx="315" cy="104" r="28"/>
-      </g>
-      <path d="M23 455H367V487H23Z" fill="#764F32" stroke="#3F291D" stroke-width="4"/>
-      <path d="M34 465H356M34 478H356" stroke="#A8784B" stroke-width="2" opacity=".7"/>
-      <rect x="0" y="548" width="390" height="296" fill="#1B3328" opacity=".78"/>
-      <path d="M0 563Q95 548 195 562T390 558V844H0Z" fill="#254333"/>
-      <rect x="15" y="553" width="360" height="15" rx="4" fill="#805B39" stroke="#4B3322" stroke-width="2"/>
-      <g>
-        <circle class="anim-halo" cx="63" cy="522" r="44" fill="url(#mobileGlow)"/>
-        <rect x="54" y="505" width="18" height="45" rx="4" fill="#F2D9A4"/>
-        <path d="M50 506H76L72 499H55Z" fill="#C6A36E"/>
-        <path class="anim-candle-flame" d="M63 501C52 492 65 483 64 475C76 488 76 494 63 501Z" fill="#FBBF66"/>
-      </g>
-      <g>
-        <circle class="anim-halo" cx="303" cy="520" r="60" fill="url(#mobileGlow)"/>
-        <g class="anim-fire"><path d="M278 557Q287 525 301 513Q305 532 324 557Z" fill="#F97316"/><path d="M291 557Q299 537 302 530Q312 542 313 557Z" fill="#FDE047"/></g>
-        <path d="M273 548H326L320 580H280Z" fill="#33443B" stroke="#9CA99A" stroke-width="3"/>
-        <ellipse cx="300" cy="548" rx="28" ry="8" fill="#19291F" stroke="#829488" stroke-width="2"/>
-        <circle class="anim-pot-bubble bubble-a" cx="291" cy="546" r="3" fill="#FDE68A"/>
-        <circle class="anim-pot-bubble bubble-b" cx="302" cy="544" r="2.5" fill="#FDE68A"/>
-        <circle class="anim-pot-bubble bubble-c" cx="311" cy="547" r="2" fill="#FDE68A"/>
-        <path class="anim-steam-1" d="M291 537Q278 520 291 506T292 483" stroke="#F5EBD5" stroke-width="3" fill="none" stroke-linecap="round"/>
-        <path class="anim-steam-2" d="M309 537Q321 519 309 506T311 488" stroke="#F5EBD5" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <path d="M277 575L268 589M322 575L331 589" stroke="#A9BE92" stroke-width="4" stroke-linecap="round"/>
-      </g>
-      <g fill="#815738" stroke="#4B3322" stroke-width="2"><rect x="23" y="588" width="67" height="12" rx="6" transform="rotate(-8 23 588)"/><rect x="25" y="604" width="71" height="12" rx="6" transform="rotate(7 25 604)"/><rect x="35" y="620" width="59" height="12" rx="6" transform="rotate(-4 35 620)"/></g>
-      <g transform="translate(180 530)">
-        <g class="anim-sproutkin">
-          <ellipse cx="0" cy="24" rx="19" ry="5" fill="#0E2119" opacity=".5"/>
-          <path d="M-15 19Q-20 -7 0 -13Q20 -7 15 19Q0 31 -15 19Z" fill="#7D9A60" stroke="#C3D6A4" stroke-width="1.5"/>
-          <path d="M-5 -10Q-21 -31 -25 -13Q-18 -3 -5 -3Z" fill="#4ADE80"/><path d="M5 -10Q21 -31 25 -13Q18 -3 5 -3Z" fill="#6BCB77"/>
-          <ellipse cx="-5" cy="6" rx="2.3" ry="3" fill="#10251C"/><ellipse cx="5" cy="6" rx="2.3" ry="3" fill="#10251C"/>
-          <path d="M-3 13Q0 16 3 13" fill="none" stroke="#10251C" stroke-width="1.5" stroke-linecap="round"/>
-        </g>
-      </g>
-      <g fill="#476D4A" opacity=".9"><path d="M0 660Q24 633 37 672Q18 682 0 660Z"/><path d="M390 689Q360 655 352 699Q373 709 390 689Z"/><path d="M0 730Q26 704 40 744Q20 752 0 730Z"/></g>
-    </svg>
-  </div>
-
-  <!-- Volumetric Crepuscular God-Rays & Ambient Bloom Lighting -->
-  <div class="volumetric-lighting" aria-hidden="true">
-    <div class="god-rays"></div>
-    <div class="ambient-bloom bloom-1"></div>
-    <div class="ambient-bloom bloom-2"></div>
-  </div>
-
-  <!-- Particle Canvas for Fireflies, Golden Pollen, Hearth Embers, or Monsoon Rain -->
-  <canvas id="particleCanvas" aria-hidden="true"></canvas>
-  <div class="world-vignette" aria-hidden="true"></div>
-
-  <!-- ==========================================================================
-       MAIN INTERFACE SHELL
-       ========================================================================== -->
-  <div class="page-shell">
-
-    <header class="liquid-glass top-navbar">
-      <a href="index.html" class="brand-identity">
-        <div class="mountain-emblem" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2">
-            <path d="M3 20h18L14 6l-4 7-3-4-4 11z" />
-            <circle cx="18" cy="6" r="1.5" fill="#FDE047" stroke="none" />
-          </svg>
-        </div>
-        <div class="brand-text">
-          <h2>Rahul D</h2>
-          <span>Build • Create • Explore</span>
-        </div>
+  <!-- Header -->
+  <header class="header">
+    <div class="header__wrapper">
+      <a href="index.html" class="brand">
+        <span class="brand-name">Rahul D</span>
+        <span class="brand-dot" aria-hidden="true"></span>
       </a>
 
-      <nav aria-label="Primary Navigation">
-        <ul class="nav-pill-group">
-          <li><a href="index.html" class="nav-pill">Home</a></li>
-          <li><a href="app/" class="nav-pill">Apps</a></li>
-          <li><a href="projects/" class="nav-pill">Projects</a></li>
-          <li><a href="about/" class="nav-pill">About</a></li>
-        </ul>
+      <div class="header-nav-bar">
+      <!-- Primary Gateway Links -->
+      <nav id="primary-nav" aria-label="Primary Navigation">
+      <ul class="nav-links">
+        <li class="nav-item is-active">
+          <a href="index.html">Overview</a>
+          <span class="nav-item__dot"></span>
+        </li>
+        <li class="nav-item">
+          <a href="apps.html">Apps</a>
+          <span class="nav-item__dot"></span>
+        </li>
+        <li class="nav-item">
+          <a href="projects.html">Projects</a>
+          <span class="nav-item__dot"></span>
+        </li>
+        <li class="nav-item">
+          <a href="about.html">About</a>
+          <span class="nav-item__dot"></span>
+        </li>
+      </ul>
       </nav>
 
-      <div class="nav-controls">
-        <button type="button" class="weather-pill-btn" id="weatherCycleTopBtn" title="Cycle display mode (Light / Monsoon / Dark)" aria-label="Cycle display mode">
-          <span id="navWeatherIcon">🌤️</span>
-          <span id="navWeatherLabel">Sunny</span>
-        </button>
+      <button class="nav-dropdown-mobile" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-nav">
+        <svg class="nav-dropdown-mobile__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <path class="hamburger-line hamburger-line--top" d="M4 12H20"></path>
+          <path class="hamburger-line hamburger-line--bottom" d="M4 12H20"></path>
+        </svg>
+      </button>
+
+      <a href="mailto:contact@rahuld.dev" class="contact-postcard-cta" onclick="copyEmail(event)">
+        <span>Connect</span>
+        <span class="cta-kanji" aria-hidden="true">दर्श</span>
+      </a>
+      <button class="audio-toggle" data-audio-toggle type="button" aria-label="Turn ambient audio on" aria-pressed="false" title="Ambient audio off"><svg class="audio-toggle__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4 10V14H7L11 18V6L7 10H4Z" fill="currentColor"></path><path class="audio-toggle__wave audio-toggle__wave--near" d="M14 9.5C15.2 10.7 15.2 13.3 14 14.5"></path><path class="audio-toggle__wave audio-toggle__wave--far" d="M16.5 7C19.2 9.7 19.2 14.3 16.5 17"></path></svg></button><button class="theme-toggle" data-theme-toggle aria-label="Switch to night mode" aria-pressed="false" title="Night mode">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><g class="theme-toggle__sun" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="3.5" fill="currentColor" stroke="none"></circle><path d="M12 2.5V5M12 19V21.5M2.5 12H5M19 12H21.5M5.28 5.28L7.05 7.05M16.95 16.95L18.72 18.72M18.72 5.28L16.95 7.05M7.05 16.95L5.28 18.72"></path></g><path class="theme-toggle__moon" d="M19.2 14.7A7.8 7.8 0 0 1 9.3 4.8 8.5 8.5 0 1 0 19.2 14.7Z" fill="currentColor"></path></svg>
+      </button>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main class="page-view active-page" id="page-home" data-page="home">
+  <main>
+    <!-- ==========================================================================
+         1. HERO SECTION (OVERVIEW ENTRY)
+         ========================================================================== -->
+    <section class="hero" id="overview" style="--section-image: image-set(url('assets/bg/bg1.webp') type('image/webp'), url('assets/bg/bg1.png') type('image/png'))">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Building calm
+          <span class="hero-word-mask">
+            <span class="hero-word" id="rotatingWord">software</span>
+          </span>
+          <em class="hero-accent">with poise</em>
+        </h1>
 
-      <!-- 2. HERO VERANDA SPLIT (Left Intro + Right Valley Observatory) -->
-      <section class="hero-veranda-grid">
-        <!-- Left Hero Content -->
-        <div class="hero-intro-box">
-          <div class="status-badge">
-            <span class="status-dot"></span>
-            <span>GUWAHATI, INDIA • AVAILABLE FOR COLLABORATION</span>
+        <p class="hero-desc">
+          Native Android & Flutter developer creating thoughtful interfaces, edge AI workflows, and software designed to last.
+        </p>
+
+        <div class="hero-social-bar">
+          <a href="https://github.com/rahuldas75" target="_blank" rel="noopener noreferrer" class="social-orb" aria-label="GitHub" title="GitHub (@rahuldas75)">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer" class="social-orb" aria-label="Spotify" title="Spotify">
+            <svg viewBox="0 0 24 24"><path d="M12 1a11 11 0 1 0 0 22 11 11 0 0 0 0-22zm5 15.9c-.2.3-.6.4-.9.2-2.5-1.5-5.6-1.9-9.3-1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4-.9 7.5-.5 10.3 1.2.3.2.4.6.2.9zm1.3-3c-.3.4-.8.5-1.2.3-2.8-1.7-7.1-2.2-10.4-1.2-.5.1-.9-.1-1.1-.6-.1-.5.1-.9.6-1.1 3.8-1.1 8.5-.6 11.8 1.4.4.2.5.8.3 1.2zm.1-3.1c-3.4-2-9-2.2-12.2-1.2-.5.2-1.1-.1-1.3-.6-.2-.5.1-1.1.6-1.3 3.7-1.1 9.9-.9 13.8 1.4.5.3.7.9.4 1.4-.3.4-.9.6-1.3.3z"/></svg>
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-orb" aria-label="YouTube" title="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23 9.7s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.4 6.2 12 6.2 12 6.2s-4.4 0-7.7.2c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S1 11.6 1 13.4v1.7c0 1.8.2 3.7.2 3.7s.2 1.6.9 2.3c.9.9 2.1.9 2.6 1 1.9.2 7.3.2 7.3.2s4.4 0 7.7-.2c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.7v-1.7c0-1.8-.2-3.7-.2-3.7zM9.8 15.6V9.2l6.2 3.2-6.2 3.2z"/></svg>
+          </a>
+          <a href="apps.html" class="social-orb" aria-label="Android Apps" title="My Android Apps">
+            <svg viewBox="0 0 24 24"><path d="M17.6 9.5l1.8-3.1a.4.4 0 0 0-.1-.5.4.4 0 0 0-.5.1l-1.9 3.2a10.4 10.4 0 0 0-9.8 0L5.2 6a.4.4 0 0 0-.5-.1.4.4 0 0 0-.1.5l1.8 3.1C3.3 11.2 1.2 14.3 1 18h22c-.2-3.7-2.3-6.8-5.4-8.5zM7 15.2a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm10 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>
+          </a>
+          <button type="button" class="social-orb" onclick="copyEmailAddress()" aria-label="Copy Email Address" title="Copy Email Address">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- ASSET 1: Large Vishnu [Hero Stage with Blueprint Placeholder] -->
+      <div class="hero-vishnu-stage" id="vishnuStage">
+        <img 
+          src="assets/hero-assets/vishnu-main.webp" 
+          alt="Lord Vishnu in Yoga Nidra" 
+          onload="this.nextElementSibling.style.display='none'" 
+          onerror="this.onerror=null;this.src='assets/hero-assets/vishnu-main.png'" 
+        />
+        <div class="art-blueprint">
+          <div class="bp-title">Lord Vishnu (Main Hero Art)</div>
+          <div class="bp-path">assets/hero-assets/vishnu-main.png</div>
+          <div class="bp-note">Transparent PNG • Recommended: ~800 × 1000px</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         2. FEATURED ANDROID APP SPOTLIGHT
+         ========================================================================== -->
+    <section class="section-wrap" id="featured-app" style="--section-image: image-set(url('assets/bg/bg2.webp') type('image/webp'), url('assets/bg/bg2.png') type('image/png'))">
+      <!-- ASSET 2: Matsya Avatar [Ambient Stage] -->
+      <div class="bg-matsya-spotlight">
+        <img 
+          src="assets/hero-assets/matsya-avatar.webp" 
+          alt="Matsya Avatar Motif" 
+          onload="this.nextElementSibling.style.display='none'" 
+          onerror="this.onerror=null;this.src='assets/hero-assets/matsya-avatar.png'" 
+        />
+        <div class="art-blueprint">
+          <div class="bp-title">Matsya Avatar</div>
+          <div class="bp-path">assets/hero-assets/matsya-avatar.png</div>
+          <div class="bp-note">Ambient Background Placement</div>
+        </div>
+      </div>
+
+      <div class="section-header-row">
+        <div>
+          <div class="section-tag"><span lang="hi">दशावतार</span><span class="section-tag-detail">Featured app</span></div>
+          <h2 class="section-title">Featured Android App</h2>
+        </div>
+        <a href="apps.html" class="view-all-link">Open App Suite →</a>
+      </div>
+
+      <div class="featured-app-card">
+        <div>
+          <div class="app-meta-badge">
+            <span>● PRODUCTION READY</span>
+            <span>//</span>
+            <span>NATIVE ANDROID</span>
           </div>
-
-          <h1 class="hero-greeting">
-            Hey, I’m Rahul <span>🍃</span>
-          </h1>
-          <p class="hero-roles">Developer &nbsp;•&nbsp; Gamer &nbsp;•&nbsp; Dreamer</p>
-          <p class="hero-bio-text">
-            I build native Android & Flutter apps, explore AI workflows, enjoy good music, and craft software that makes everyday life a little calmer—one project at a time.
+          <h3>Matsi Weather</h3>
+          <p>
+            A calm, hyper-local meteorological application built for Guwahati and Northeast India. Designed with clean offline caching, zero ad tracking, and subtle live sky transitions.
           </p>
-
-          <!-- 5 Circular Social Orbs -->
-          <div class="hero-social-bar">
-            <a href="https://github.com/rahuldas75" target="_blank" rel="noopener noreferrer" class="social-orb" aria-label="GitHub" title="GitHub (@rahuldas75)">
-              <svg viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.2 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.65 18.35.5 12 .5z"/></svg>
-            </a>
-            <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer" class="social-orb" aria-label="Spotify" title="Spotify">
-              <svg viewBox="0 0 24 24"><path d="M12 1a11 11 0 1 0 0 22 11 11 0 0 0 0-22zm5 15.9c-.2.3-.6.4-.9.2-2.5-1.5-5.6-1.9-9.3-1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4-.9 7.5-.5 10.3 1.2.3.2.4.6.2.9zm1.3-3c-.3.4-.8.5-1.2.3-2.8-1.7-7.1-2.2-10.4-1.2-.5.1-.9-.1-1.1-.6-.1-.5.1-.9.6-1.1 3.8-1.1 8.5-.6 11.8 1.4.4.2.5.8.3 1.2zm.1-3.1c-3.4-2-9-2.2-12.2-1.2-.5.2-1.1-.1-1.3-.6-.2-.5.1-1.1.6-1.3 3.7-1.1 9.9-.9 13.8 1.4.5.3.7.9.4 1.4-.3.4-.9.6-1.3.3z"/></svg>
-            </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-orb" aria-label="YouTube" title="YouTube">
-              <svg viewBox="0 0 24 24"><path d="M23 9.7s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.4 6.2 12 6.2 12 6.2s-4.4 0-7.7.2c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S1 11.6 1 13.4v1.7c0 1.8.2 3.7.2 3.7s.2 1.6.9 2.3c.9.9 2.1.9 2.6 1 1.9.2 7.3.2 7.3.2s4.4 0 7.7-.2c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.7v-1.7c0-1.8-.2-3.7-.2-3.7zM9.8 15.6V9.2l6.2 3.2-6.2 3.2z"/></svg>
-            </a>
-            <a href="app/" class="social-orb" aria-label="Android Apps" title="My Android Apps">
-              <svg viewBox="0 0 24 24"><path d="M17.6 9.5l1.8-3.1a.4.4 0 0 0-.1-.5.4.4 0 0 0-.5.1l-1.9 3.2a10.4 10.4 0 0 0-9.8 0L5.2 6a.4.4 0 0 0-.5-.1.4.4 0 0 0-.1.5l1.8 3.1C3.3 11.2 1.2 14.3 1 18h22c-.2-3.7-2.3-6.8-5.4-8.5zM7 15.2a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm10 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>
-            </a>
-            <button type="button" onclick="copyEmailAddress()" class="social-orb" aria-label="Copy Email Address" title="Copy Email Address">
-              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            </button>
-          </div>
-
-          <div>
-            <div class="good-vibes-script">Good vibes only ☺</div>
-            <br />
-            <button type="button" class="spirit-whisper" id="spiritHelloBtn" aria-label="Say hello to the little forest spirit">
-              🍃 There's a tiny forest friend nearby — say hello
-            </button>
+          <div style="display: flex; gap: 1rem;">
+            <a href="apps.html" class="contact-postcard-cta">View App Details →</a>
           </div>
         </div>
-      </section>
 
-      <!-- 3. PRIMARY 4-CARD BENTO SHOWCASE (All Original Cards Preserved) -->
-      <section class="showcase-bento-row" aria-label="Featured Highlights">
+        <!-- Interactive Phone Preview -->
+        <div class="app-preview-chassis">
+          <div class="preview-city">Guwahati, IN</div>
+          <div class="preview-icon">🌤️</div>
+          <div class="preview-temp">28°C</div>
+          <div class="preview-label">Misty River Valley</div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Card 1: Personal Audio Player -->
-        <article class="liquid-glass liquid-glass-interactive bento-card">
-          <div class="panel-header" style="margin-bottom: 0;">
-            <span style="display: flex; align-items: center; gap: 8px; font-size: 0.95rem;">
-              <span class="eq-bars" aria-hidden="true">
-                <span class="eq-bar"></span><span class="eq-bar"></span><span class="eq-bar"></span>
-              </span>
-              My Audio
-            </span>
-            <a href="assets/audio/YuE2_00001.flac" style="color: var(--emerald-accent); text-decoration: none; font-size: 0.85rem;" title="Open audio file">↗</a>
+    <!-- ==========================================================================
+         3. SELECTED PROJECTS (EXACTLY 3 CURATED POSTCARDS)
+         ========================================================================== -->
+    <section class="section-wrap" id="selected-projects" style="--section-image: image-set(url('assets/bg/bg1.webp') type('image/webp'), url('assets/bg/bg1.png') type('image/png'))">
+      <!-- ASSET 4: Kurma Avatar [Ambient Grounding Stage] -->
+      <div class="bg-kurma-spotlight">
+        <img 
+          src="assets/hero-assets/kurma-avatar.webp" 
+          alt="Kurma Avatar Motif" 
+          onload="this.nextElementSibling.style.display='none'" 
+          onerror="this.onerror=null;this.src='assets/hero-assets/kurma-avatar.png'" 
+        />
+        <div class="art-blueprint">
+          <div class="bp-title">Kurma Avatar</div>
+          <div class="bp-path">assets/hero-assets/kurma-avatar.png</div>
+          <div class="bp-note">Grounding Background Placement</div>
+        </div>
+      </div>
+
+      <div class="section-header-row">
+        <div>
+          <div class="section-tag">कृतयः // 03 SELECTED BUILDS</div>
+          <h2 class="section-title">Selected Projects</h2>
+        </div>
+        <a href="projects.html" class="view-all-link">Browse All Projects (Archive) →</a>
+      </div>
+
+      <div class="projects-3-grid">
+        <!-- Project 1 -->
+        <article class="project-mini-card">
+          <div class="card-top-id">
+            <span>[ 01 // ARCHITECTURE ]</span>
+            <span>2026</span>
           </div>
-
-          <div class="audio-player-wrapper">
-            <audio class="audio-player" controls preload="none" aria-label="My audio player">
-              <source src="assets/audio/YuE2_00001.flac" type="audio/flac">
-              Your browser does not support the audio player.
-            </audio>
+          <div>
+            <h4>Kurma Engine</h4>
+            <p>
+              A modular, offline-first Flutter application framework with reactive state isolation and resilient SQL sync.
+            </p>
           </div>
+          <a href="projects.html" class="view-all-link">Read Case Study →</a>
         </article>
 
-        <!-- Card 2: Featured App (Matsi Weather + Interactive Phone Mockup) -->
-        <article class="liquid-glass liquid-glass-interactive bento-card">
-          <div class="featured-app-grid">
-            <div>
-              <div style="font-size: 0.8rem; font-weight: 700; color: var(--firelight-amber); display: flex; align-items: center; gap: 6px; justify-content: inherit;">
-                <span>🌿</span> Featured Android App
-              </div>
+        <!-- Project 2 -->
+        <article class="project-mini-card">
+          <div class="card-top-id">
+            <span>[ 02 // GENERATIVE AI ]</span>
+            <span>2026</span>
+          </div>
+          <div>
+            <h4>ComfyUI LoRA Pipeline</h4>
+            <p>
+              Automated image diffusion server and API orchestration for creative asset rendering and style consistency.
+            </p>
+          </div>
+          <a href="projects.html" class="view-all-link">Read Case Study →</a>
+        </article>
 
-              <div class="app-brand-row">
-                <div class="matsi-app-icon">⛅</div>
-                <div>
-                  <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--text-strong);">Matsi Weather</h3>
-                  <span style="font-size: 0.74rem; color: var(--sage);">Simple. Clean. Local.</span>
-                </div>
-              </div>
+        <!-- Project 3 -->
+        <article class="project-mini-card">
+          <div class="card-top-id">
+            <span>[ 03 // AUDIO & WEB ]</span>
+            <span>2026</span>
+          </div>
+          <div>
+            <h4>Audio Sanctum</h4>
+            <p>
+              An acoustic focus player designed for developers, featuring lossless FLAC streaming and tactile playback controls.
+            </p>
+          </div>
+          <a href="projects.html" class="view-all-link">Read Case Study →</a>
+        </article>
+      </div>
+    </section>
 
-              <p style="font-size: 0.8rem; color: var(--parchment); margin-bottom: 14px;">
-                Real-time weather for Guwahati & Northeast India. Tap the phone to preview live sky moods!
-              </p>
+    <!-- ==========================================================================
+         4. TOOLKIT & CRAFT SKILLS
+         ========================================================================== -->
+    <section class="section-wrap" id="toolkit" style="--section-image: image-set(url('assets/bg/bg2.webp') type('image/webp'), url('assets/bg/bg2.png') type('image/png'))">
+      <div class="section-header-row">
+        <div>
+          <div class="section-tag">साधनम् // STACK & CAPABILITIES</div>
+          <h2 class="section-title">Toolkit & Craft</h2>
+        </div>
+        <a href="about.html" class="view-all-link">Full Engineering Setup →</a>
+      </div>
 
-              <div class="featured-app-actions" style="display: flex; gap: 8px; flex-wrap: wrap;">
-                <a href="app/" class="pill-cta-btn">
-                  Explore App <span>→</span>
-                </a>
-                <button type="button" class="pill-cta-btn" style="background: var(--tint); border-color: var(--glass-rim);" onclick="cycleWeatherEnvironment()">
-                  Sky Mood 🔄
-                </button>
-              </div>
+      <div class="toolkit-grid">
+        <div>
+          <p style="color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 1.5rem;">
+            Primary technologies, frameworks, and workflows leveraged across client applications and internal lab projects.
+          </p>
+
+          <h5 style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--pitambara); text-transform: uppercase; margin-bottom: 0.5rem;">Mobile & Frontend</h5>
+          <div class="skills-cluster" style="margin-bottom: 1.5rem;">
+            <span class="skill-chip">Flutter</span>
+            <span class="skill-chip">Kotlin</span>
+            <span class="skill-chip">Android SDK</span>
+            <span class="skill-chip">Dart</span>
+            <span class="skill-chip">Jetpack Compose</span>
+          </div>
+
+          <h5 style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--pitambara); text-transform: uppercase; margin-bottom: 0.5rem;">AI & Backend Infrastructure</h5>
+          <div class="skills-cluster">
+            <span class="skill-chip">Python</span>
+            <span class="skill-chip">Flask</span>
+            <span class="skill-chip">ComfyUI</span>
+            <span class="skill-chip">FLUX / LoRA</span>
+            <span class="skill-chip">MySQL</span>
+            <span class="skill-chip">Git / CI-CD</span>
+          </div>
+        </div>
+
+        <div class="toolkit-quote-side">
+          <blockquote>
+            "Technology is at its best when it remains quiet, durable, and respectful of human attention."
+          </blockquote>
+          <span>Rahul D — Guwahati, Assam</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. NEWS / NOTICE BOARD (BULLETIN FEED — EDIT DIRECTLY HERE)
+         ========================================================================== -->
+    <section class="section-wrap" id="notice-board" style="--section-image: image-set(url('assets/bg/bg1.webp') type('image/webp'), url('assets/bg/bg1.png') type('image/png'))">
+      <div class="notice-board-grid">
+        <!-- Lead Column + Peacock Guardian -->
+        <div class="notice-board-lead">
+          <div class="section-tag">वृत्तान्तः // DISPATCH & UPDATES</div>
+          <h2>Notice Board</h2>
+          <p>
+            Field dispatches, project milestones, and brief updates from my desk in Guwahati.
+          </p>
+
+          <!-- ASSET 3: The Peacock as Guardian -->
+          <div class="bg-peacock-stage">
+            <img 
+              src="assets/hero-assets/peacock.webp" 
+              alt="The Royal Peacock" 
+              onload="this.nextElementSibling.style.display='none'" 
+              onerror="this.onerror=null;this.src='assets/hero-assets/peacock.png'" 
+            />
+            <div class="art-blueprint">
+              <div class="bp-title">The Peacock (Mayūra)</div>
+              <div class="bp-path">assets/hero-assets/peacock.png</div>
+              <div class="bp-note">Notice Board Guardian Placement</div>
             </div>
+          </div>
+        </div>
 
-            <!-- Interactive Phone Mockup -->
-            <div class="phone-chassis" onclick="cycleWeatherEnvironment()" role="button" tabindex="0" aria-label="Simulate weather in Matsi Weather and change website sky" onkeydown="if(event.key==='Enter'||event.key===' ') cycleWeatherEnvironment()">
-              <div class="phone-island"></div>
-              <div>
-                <div style="font-size: 0.65rem; color: rgba(255,255,255,0.85); font-weight: 600;" id="phoneCity">Guwahati</div>
-                <div style="font-size: 24px; margin: 2px 0;" id="phoneIcon">🌤️</div>
-                <div style="font-size: 1.35rem; font-weight: 800; color: var(--text-strong);" id="phoneTemp">28°C</div>
-              </div>
-              <div style="font-size: 0.62rem; color: var(--text-accent); background: rgba(0,0,0,0.38); padding: 3px 8px; border-radius: 99px;" id="phoneLabel">
-                Sunny Valley
-              </div>
+        <!-- Bulletin Cards: EDIT THESE NOTICES AS NEEDED -->
+        <ul class="bulletin-feed">
+          <!-- NOTICE ITEM 1 -->
+          <li class="bulletin-card">
+            <div class="bulletin-meta">
+              <span class="bulletin-badge">UPDATE</span>
+              <span>OCTOBER 2026</span>
             </div>
-          </div>
-        </article>
+            <h4>Matsi Weather v2.4 Rollout</h4>
+            <p>
+              Shipped an updated radar overlay and optimized battery drain down by 35% on low-power Android chipsets.
+            </p>
+          </li>
 
-        <!-- Card 3: Recent Projects -->
-        <article class="liquid-glass liquid-glass-interactive bento-card">
-          <div class="panel-header" style="margin-bottom: 0;">
-            <span style="font-size: 0.95rem;">📁 Selected Builds</span>
-            <a href="projects/" style="font-size: 0.76rem; font-weight: 700; color: var(--emerald-accent); text-decoration: none;">
-              All Projects →
-            </a>
-          </div>
-
-          <div class="projects-mini-stack" id="projectsContainer">
-            <!-- Populated dynamically from PORTFOLIO_CONFIG -->
-          </div>
-        </article>
-
-        <!-- Card 4: Toolkit & Craft -->
-        <article class="liquid-glass liquid-glass-interactive bento-card toolkit-card">
-          <div class="panel-header" style="margin-bottom: 0;">
-            <span style="font-size: 0.92rem;">🛠️ Toolkit & Craft</span>
-          </div>
-
-          <div class="tech-pill-cloud">
-            <span class="tech-pill">Flutter</span>
-            <span class="tech-pill">Kotlin</span>
-            <span class="tech-pill">Android SDK</span>
-            <span class="tech-pill">Python</span>
-            <span class="tech-pill">Flask</span>
-            <span class="tech-pill">MySQL</span>
-            <span class="tech-pill">ComfyUI</span>
-            <span class="tech-pill">FLUX / LoRA</span>
-            <span class="tech-pill">Git</span>
-          </div>
-
-          <div class="handwritten-quote">
-            "Small steps create big journeys."
-          </div>
-        </article>
-
-      </section>
-
-      <!-- 4. CHAPTER II: COTTAGE FIELD NOTES & /NOW STATUS -->
-      <section>
-        <article class="liquid-glass liquid-glass-interactive bento-card">
-          <div class="about-grid">
-            <div>
-              <div class="status-badge" style="margin-bottom: 8px;">
-                <span>📓 FIELD NOTES & /NOW</span>
-              </div>
-              <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong);">From My Desk in Guwahati</h3>
-              <p style="font-size: 0.88rem; color: var(--parchment); margin-top: 6px; line-height: 1.65;">
-                I enjoy crafting software that feels calm, human, and tactile—combining native mobile engineering with practical AI workflows and thoughtful UI design. When I'm not coding, you'll find me gaming, curating acoustic playlists, or exploring Assam.
-              </p>
-              <div style="margin-top: 12px;">
-                <a href="about/" class="pill-cta-btn">Read Full Story & Setup →</a>
-              </div>
+          <!-- NOTICE ITEM 2 -->
+          <li class="bulletin-card">
+            <div class="bulletin-meta">
+              <span class="bulletin-badge">LABS</span>
+              <span>SEPTEMBER 2026</span>
             </div>
+            <h4>Local LoRA Workflow Experiments</h4>
+            <p>
+              Benchmarking lightweight fine-tunes for consistent character illustrations using 12GB VRAM edge hardware.
+            </p>
+          </li>
 
-            <div id="changelogContainer">
-              <!-- Populated from PORTFOLIO_CONFIG -->
+          <!-- NOTICE ITEM 3 -->
+          <li class="bulletin-card">
+            <div class="bulletin-meta">
+              <span class="bulletin-badge">NOTICE</span>
+              <span>AUGUST 2026</span>
             </div>
-          </div>
-        </article>
-      </section>
+            <h4>Consultation & Q4 Collaboration</h4>
+            <p>
+              Currently reviewing select freelance contracts and native mobile engagements for late 2026.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
 
-    </main>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__art" aria-hidden="true">
+      <img class="footer__image" src="assets/footer-assets/ghy-map-light.png" data-light-src="assets/footer-assets/ghy-map-light.png" data-dark-src="assets/footer-assets/ghy-map-dark.png" width="1200" height="800" alt="" loading="lazy" decoding="async">
+    </div>
+    <div class="footer__content">
+      <div class="footer__text">
+        <p class="footer__eyebrow">A quiet place to begin</p>
+        <a href="mailto:contact@rahuld.dev" class="footer__text-link" aria-label="Let's talk">
+          <h2 class="footer__headline">Still thinking about a better build? <em>let's talk.</em></h2>
+        </a>
+      </div>
+      <nav class="navigation" aria-label="Pages">
+        <h3 class="navigation__title">Pages</h3>
+        <ul class="navigation__group">
+          <li><a href="index.html">Overview</a></li>
+          <li><a href="apps.html">Apps</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <nav class="navigation" aria-label="Explore">
+        <h3 class="navigation__title">Explore</h3>
+        <ul class="navigation__group">
+          <li><a href="#featured-app">Featured app</a></li>
+          <li><a href="#selected-projects">Selected work</a></li>
+          <li><a href="#toolkit">Toolkit</a></li>
+          <li><a href="#notice-board">Notice board</a></li>
+        </ul>
+      </nav>
+      <div class="navigation">
+        <h3 class="navigation__title">Contact</h3>
+        <address class="navigation__group">
+          <a href="mailto:contact@rahuld.dev">contact@rahuld.dev</a>
+          <a href="https://github.com/rahuldas75" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </address>
+        <div class="footer__social">
+          <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer" aria-label="Spotify">Spotify</a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__legal" aria-label="Legal">
+      <span>© 2026 Rahul D</span>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="THIRD-PARTY-LICENSES.md">Licenses</a>
+    </div>
+  </footer>
 
-    <footer class="liquid-glass woodland-footer">
-      <span>© <span id="footerYear">2026</span> Rahul D • Built in Guwahati 🍃</span>
-      <span style="color: var(--sage);">Build • Create • Explore</span>
-    </footer>
+  <!-- ==========================================================================
+       SCRIPTS: TITLE ROTATION, CURSOR, SCROLLBAR & COPY
+       ========================================================================== -->
+  <script src="site.js"></script>
+  <script>
+    /* 1. Custom Blur Cursor */
+    const cursor = document.getElementById('customCursor');
+    if (cursor && !window.matchMedia('(max-width: 760px), (pointer: coarse)').matches) {
+      window.addEventListener('mousemove', (e) => {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+      });
+    }
 
-  </div>
+    /* 2. Scroll Progress Bar */
+    const scrollThumb = document.getElementById('scrollbar-thumb');
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollY / (docHeight || 1)) * 75;
+      scrollThumb.style.top = `${progress}%`;
+    });
 
-  <nav class="liquid-glass mobile-bottom-dock" aria-label="Mobile Navigation">
-    <a href="index.html" class="dock-link"><span>🏡</span>Home</a>
-    <a href="app/" class="dock-link"><span>📱</span>Apps</a>
-    <a href="projects/" class="dock-link"><span>📁</span>Projects</a>
-    <a href="about/" class="dock-link"><span>🍃</span>About</a>
-  </nav>
+    /* 3. Hero Rotating Words */
+    const words = ["software", "mobile apps", "AI workflows", "systems"];
+    let wordIndex = 0;
+    const rotatingEl = document.getElementById('rotatingWord');
 
-  <script src="app.js" defer></script>
+    setInterval(() => {
+      rotatingEl.style.transform = 'translateY(-100%)';
+      setTimeout(() => {
+        wordIndex = (wordIndex + 1) % words.length;
+        rotatingEl.textContent = words[wordIndex];
+        rotatingEl.style.transform = 'translateY(100%)';
+        setTimeout(() => {
+          rotatingEl.style.transform = 'translateY(0)';
+        }, 50);
+      }, 300);
+    }, 3200);
 
+    /* 4. Copy Email Helper */
+    function copyEmail(e) {
+      if (e) e.preventDefault();
+      const email = 'contact@rahuld.dev';
+      navigator.clipboard.writeText(email).then(() => {
+        const toast = document.getElementById('toastNotification');
+        toast.classList.add('is-visible');
+        setTimeout(() => toast.classList.remove('is-visible'), 2400);
+      });
+    }
+
+    function copyEmailAddress() {
+      copyEmail();
+    }
+
+    /* 5. Hero Vishnu Mouse Parallax */
+    const vishnuStage = document.getElementById('vishnuStage');
+    if (vishnuStage && !window.matchMedia('(max-width: 760px), (pointer: coarse)').matches) {
+      window.addEventListener('mousemove', (e) => {
+        const moveX = (e.clientX / window.innerWidth - 0.5) * -18;
+        const moveY = (e.clientY / window.innerHeight - 0.5) * -18;
+        vishnuStage.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
+      });
+    }
+  </script>
 </body>
 </html>
