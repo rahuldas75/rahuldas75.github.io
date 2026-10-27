@@ -16,7 +16,7 @@
   var audioEnabled = false;
   var audioPreferenceKey = 'rd-audio-enabled';
   var audioPositionKey = 'rd-audio-position';
-  var audioSource = 'assets/audio/active-audio.flac';
+  var audioSource = 'assets/audio/active-audio.wav';
 
   // Storage can be unavailable in privacy-restricted browser contexts.
   try { savedTheme = localStorage.getItem('rd-theme') || ''; } catch (e) {}
@@ -87,7 +87,7 @@
     if (!ambientAudio) {
       ambientAudio = new Audio(audioSource);
       ambientAudio.loop = true;
-      ambientAudio.volume = 0.32;
+      ambientAudio.volume = 0.5;
       ambientAudio.preload = 'auto';
       ambientAudio.addEventListener('timeupdate', saveAudioState);
       ambientAudio.addEventListener('pause', saveAudioState);
