@@ -2822,8 +2822,8 @@ body[data-theme="night"] .header {
       flex-wrap: wrap;
     }
     .social-orb {
-      width: 42px;
-      height: 42px;
+          width: 52px;
+          height: 52px;
       border-radius: 50%;
       border: 1px solid var(--rule);
       display: flex;
@@ -2833,8 +2833,8 @@ body[data-theme="night"] .header {
       transition: var(--ease-soft);
     }
     .social-orb svg {
-      width: 17px;
-      height: 17px;
+      width: 22px;
+      height: 22px;
       fill: var(--ink);
     }
     .social-orb:hover {
@@ -3949,3 +3949,28 @@ body[data-theme="night"] .theme-toggle {
 }
 body[data-theme="night"] .theme-toggle__sun { opacity: 0; transform: scale(.5) rotate(35deg); }
 body[data-theme="night"] .theme-toggle__moon { opacity: 1; transform: scale(1) rotate(0); }
+
+/* Keep the mobile header controls visually uniform and easy to tap. */
+@media (max-width: 760px) {
+  .header-nav-bar .nav-dropdown-mobile,
+  .header-nav-bar .audio-toggle,
+  .header-nav-bar .theme-toggle {
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 14px !important;
+  }
+  .header-nav-bar .nav-dropdown-mobile__icon,
+  .header-nav-bar .audio-toggle__icon,
+  .header-nav-bar .theme-toggle svg {
+    width: 22px !important;
+    height: 22px !important;
+  }
+  .hero-social-bar .social-orb {
+    width: 48px;
+    height: 48px;
+  }
+  .hero-social-bar .social-orb svg {
+    width: 21px;
+    height: 21px;
+  }
+}

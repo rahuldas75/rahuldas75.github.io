@@ -10,6 +10,7 @@
   var root = document.documentElement;
   var body = document.body;
   var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
   var savedTheme = '';
   var ambientAudio = null;
   var audioEnabled = false;
@@ -20,6 +21,8 @@
   // Storage can be unavailable in privacy-restricted browser contexts.
   try { savedTheme = localStorage.getItem('rd-theme') || ''; } catch (e) {}
   if (savedTheme === 'night') body.setAttribute('data-theme', 'night');
+  else if (savedTheme === 'day') body.removeAttribute('data-theme');
+  else if (prefersDarkTheme.matches) body.setAttribute('data-theme', 'night');
 
   function updateToggle() {
     var isNight = body.getAttribute('data-theme') === 'night';
@@ -166,6 +169,14 @@
     if (!window.matchMedia('(max-width: 760px)').matches) setMobileMenu(false);
     else setMobileMenu(body.classList.contains('nav-menu-open'));
   });
+  if (typeof prefersDarkTheme.addEventListener === 'function') {
+    prefersDarkTheme.addEventListener('change', function (event) {
+      if (savedTheme) return;
+      if (event.matches) body.setAttribute('data-theme', 'night');
+      else body.removeAttribute('data-theme');
+      updateToggle();
+    });
+  }
   window.addEventListener('pagehide', saveAudioState);
 
   // The layer is created once so pages do not need duplicate transition markup.

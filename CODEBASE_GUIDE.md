@@ -34,7 +34,7 @@ This is a framework-free, multi-page portfolio site for Rahul D. Each HTML page 
 - `404.html` is the offline/error route and keeps the shared header/footer navigation.
 - `privacy-policy.html` and `terms-of-service.html` are concise informational legal pages.
 - `style.css` contains the design tokens, shared components, responsive rules, scene backgrounds, artwork positioning, themes, and the final cascade overrides.
-- `site.js` applies saved theme state, synchronizes theme-aware images, controls the accessible mobile menu, and handles internal page transitions.
+- `site.js` applies the saved theme state or falls back to the client device color-scheme preference, synchronizes theme-aware images, controls the accessible mobile menu, and handles internal page transitions.
 
 ## Page architecture
 
@@ -76,8 +76,9 @@ All paths are relative so the site remains compatible with static hosting and lo
 On script load, `site.js`:
 
 1. Reads the saved `rd-theme` value when browser storage is available.
-2. Applies the night theme before updating controls.
-3. Installs one delegated click listener for the mobile menu, theme control, and internal navigation.
+2. Uses the client device's dark-mode preference only when no saved theme exists.
+3. Applies the selected theme before updating controls.
+4. Installs one delegated click listener for the mobile menu, theme control, and internal navigation.
 4. Installs Escape and resize handling for the mobile menu.
 5. Adds the page-transition layer and synchronizes controls/images.
 

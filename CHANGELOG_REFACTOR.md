@@ -17,6 +17,8 @@
 - Added `THIRD-PARTY-LICENSES.md` with attribution and SIL Open Font License links for all bundled font files.
 - Added a compact copyright notice and licenses link to every page footer.
 - Updated the privacy disclosure to describe the actual local-storage behavior and to avoid claiming that analytics are present when none are configured.
+- Standardized mobile header controls as matching 42px rounded squares and enlarged hero social buttons and icons.
+- Added device color-scheme detection as the initial theme fallback while preserving explicit saved theme choices.
 
 ### Performance and reliability
 
